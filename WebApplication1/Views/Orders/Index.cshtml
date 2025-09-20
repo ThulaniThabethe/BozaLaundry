@@ -1,0 +1,28 @@
+@model IEnumerable<WebApplication1.Models.Order>
+
+@{ 
+    ViewBag.Title = "Orders";
+}
+
+<div class="jumbotron">
+    <h1>Manage Orders</h1>
+    <p class="lead">Efficiently manage all customer orders, from creation to completion.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>View All Orders</h2>
+        <p>Access a comprehensive list of all orders, track their status, and review details.</p>
+        <p>@Html.ActionLink("View Orders ", "OrderList", "Orders", null, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Create New Order</h2>
+        <p>Place new orders for customers, specifying services, quantities, and delivery preferences.</p>
+        <p>@Html.ActionLink("Create New ", "Create", "Orders", null, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Process Orders</h2>
+        <p>Update order statuses, assign tasks, and ensure timely processing and delivery.</p>
+        <p>@Html.ActionLink("Process ", "OrderList", "Orders", null, new { @class = "btn btn-primary" })</p>
+    </div>
+</div>

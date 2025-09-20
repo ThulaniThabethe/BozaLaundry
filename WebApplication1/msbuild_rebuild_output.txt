@@ -1,0 +1,1104 @@
+Microsoft (R) Build Engine version 16.11.6+a918ceb31 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Building the projects in this solution one at a time. To enable parallel build, please add the "-m" switch.
+Build started 2025/09/20 07:44:08.
+Project "C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\WebApplication1.sln" on node 1 (Rebuild target(s)).
+ValidateSolutionConfiguration:
+  Building solution configuration "Debug|Any CPU".
+Project "C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\WebApplication1.sln" (1) is building "C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\WebApplication1.csproj" (2) on node 1 (Rebuild target(s)).
+KillVBCSCompilerBeforeClean:
+  ExecutablePath is C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\Roslyn\VBCSCompiler.exe
+CoreClean:
+  Deleting file "c:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\obj\Debug\WebApplication1.csproj.AssemblyReference.cache".
+  Deleting file "c:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\obj\Debug\WebApplication1.csproj.CoreCompileInputs.cache".
+ResolveAssemblyReferences:
+  Unified primary reference "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+      Using this version instead of original version "6.0.0.0" in "C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.4\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll" because AutoUnify is 'true'.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(2203,5): warning MSB3245: Could not resolve this reference. Could not locate the assembly "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL". Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors. [C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\WebApplication1.csproj]
+          For SearchPath "C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.4\lib\net45".
+          Considered "C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.4\lib\net45\EntityFramework.winmd", but it didn't exist.
+          Considered "C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.4\lib\net45\EntityFramework.dll", but it didn't exist.
+          Considered "C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.4\lib\net45\EntityFramework.exe", but it didn't exist.
+          For SearchPath "{CandidateAssemblyFiles}".
+          Considered "bin\Antlr3.Runtime.dll",
+  			but its name "Antlr3.Runtime"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\EntityFramework.dll", but it didn't exist.
+          Considered "bin\EntityFramework.SqlServer.dll",
+  			but its name "EntityFramework.SqlServer"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\Microsoft.AspNet.Identity.Core.dll",
+  			but its name "Microsoft.AspNet.Identity.Core"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\Microsoft.AspNet.Identity.EntityFramework.dll",
+  			but its name "Microsoft.AspNet.Identity.EntityFramework"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll",
+  			but its name "Microsoft.CodeDom.Providers.DotNetCompilerPlatform"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\Microsoft.Owin.dll",
+  			but its name "Microsoft.Owin"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\Microsoft.Owin.Host.SystemWeb.dll",
+  			but its name "Microsoft.Owin.Host.SystemWeb"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\Microsoft.Owin.Security.dll",
+  			but its name "Microsoft.Owin.Security"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\Microsoft.Owin.Security.OAuth.dll",
+  			but its name "Microsoft.Owin.Security.OAuth"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\Microsoft.Web.Infrastructure.dll",
+  			but its name "Microsoft.Web.Infrastructure"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\Owin.dll",
+  			but its name "Owin"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\csc.exe",
+  			but its name "csc"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\csi.exe",
+  			but its name "csi"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll",
+  			but its name "Microsoft.Build.Tasks.CodeAnalysis"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll",
+  			but its name "Microsoft.CodeAnalysis.CSharp"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll",
+  			but its name "Microsoft.CodeAnalysis.CSharp.Scripting"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\Microsoft.CodeAnalysis.dll",
+  			but its name "Microsoft.CodeAnalysis"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll",
+  			but its name "Microsoft.CodeAnalysis.Scripting"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll",
+  			but its name "Microsoft.CodeAnalysis.VisualBasic"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll",
+  			but its name "Microsoft.DiaSymReader.Native.amd64"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll",
+  			but its name "Microsoft.DiaSymReader.Native.x86"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\Microsoft.Win32.Primitives.dll",
+  			but its name "Microsoft.Win32.Primitives"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.AppContext.dll",
+  			but its name "System.AppContext"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Buffers.dll",
+  			but its name "System.Buffers"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Collections.Immutable.dll",
+  			but its name "System.Collections.Immutable"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Console.dll",
+  			but its name "System.Console"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Diagnostics.DiagnosticSource.dll",
+  			but its name "System.Diagnostics.DiagnosticSource"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Diagnostics.FileVersionInfo.dll",
+  			but its name "System.Diagnostics.FileVersionInfo"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Diagnostics.StackTrace.dll",
+  			but its name "System.Diagnostics.StackTrace"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Globalization.Calendars.dll",
+  			but its name "System.Globalization.Calendars"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.IO.Compression.dll",
+  			but its name "System.IO.Compression"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.IO.Compression.ZipFile.dll",
+  			but its name "System.IO.Compression.ZipFile"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.IO.FileSystem.dll",
+  			but its name "System.IO.FileSystem"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.IO.FileSystem.Primitives.dll",
+  			but its name "System.IO.FileSystem.Primitives"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Memory.dll",
+  			but its name "System.Memory"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Net.Http.dll",
+  			but its name "System.Net.Http"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Net.Sockets.dll",
+  			but its name "System.Net.Sockets"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Numerics.Vectors.dll",
+  			but its name "System.Numerics.Vectors"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Reflection.Metadata.dll",
+  			but its name "System.Reflection.Metadata"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll",
+  			but its name "System.Runtime.CompilerServices.Unsafe"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll",
+  			but its name "System.Runtime.InteropServices.RuntimeInformation"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Security.Cryptography.Algorithms.dll",
+  			but its name "System.Security.Cryptography.Algorithms"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Security.Cryptography.Encoding.dll",
+  			but its name "System.Security.Cryptography.Encoding"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Security.Cryptography.Primitives.dll",
+  			but its name "System.Security.Cryptography.Primitives"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Security.Cryptography.X509Certificates.dll",
+  			but its name "System.Security.Cryptography.X509Certificates"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Text.Encoding.CodePages.dll",
+  			but its name "System.Text.Encoding.CodePages"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Threading.Tasks.Extensions.dll",
+  			but its name "System.Threading.Tasks.Extensions"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.ValueTuple.dll",
+  			but its name "System.ValueTuple"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Xml.ReaderWriter.dll",
+  			but its name "System.Xml.ReaderWriter"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Xml.XmlDocument.dll",
+  			but its name "System.Xml.XmlDocument"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Xml.XPath.dll",
+  			but its name "System.Xml.XPath"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Xml.XPath.XDocument.dll",
+  			but its name "System.Xml.XPath.XDocument"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\vbc.exe",
+  			but its name "vbc"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\VBCSCompiler.exe",
+  			but its name "VBCSCompiler"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\System.Web.Helpers.dll",
+  			but its name "System.Web.Helpers"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\System.Web.Mvc.dll",
+  			but its name "System.Web.Mvc"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\System.Web.Optimization.dll",
+  			but its name "System.Web.Optimization"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\System.Web.Razor.dll",
+  			but its name "System.Web.Razor"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\System.Web.WebPages.Deployment.dll",
+  			but its name "System.Web.WebPages.Deployment"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\System.Web.WebPages.dll",
+  			but its name "System.Web.WebPages"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\System.Web.WebPages.Razor.dll",
+  			but its name "System.Web.WebPages.Razor"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\WebApplication1.dll",
+  			but its name "WebApplication1"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\WebGrease.dll",
+  			but its name "WebGrease"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "obj\Debug\TempPE\Models.Model1.Context.cs.dll",
+  			but its name "Models.Model1.Context.cs"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "obj\Debug\TempPE\Models.Model1.cs.dll",
+  			but its name "Models.Model1.cs"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "obj\Debug\TempPE\Models.Model1.Designer.cs.dll",
+  			but its name "Models.Model1.Designer.cs"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "obj\Debug\WebApplication1.dll",
+  			but its name "WebApplication1"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "Owin.1.0\lib\net40\Owin.dll",
+  			but its name "Owin"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll",
+  			but its name "Antlr3.Runtime"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\EntityFramework.6.5.1\build\Microsoft.Data.Entity.Build.Tasks.dll",
+  			but its name "Microsoft.Data.Entity.Build.Tasks"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\EntityFramework.6.5.1\lib\net40\EntityFramework.dll",
+  			but its name "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\EntityFramework.6.5.1\lib\net40\EntityFramework.SqlServer.dll",
+  			but its name "EntityFramework.SqlServer"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll",
+  			but its name "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll",
+  			but its name "EntityFramework.SqlServer"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\EntityFramework.6.5.1\lib\netstandard2.1\EntityFramework.dll",
+  			but its name "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\EntityFramework.6.5.1\lib\netstandard2.1\EntityFramework.SqlServer.dll",
+  			but its name "EntityFramework.SqlServer"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\EntityFramework.6.5.1\tools\net40\any\ef6.exe",
+  			but its name "ef6"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\EntityFramework.6.5.1\tools\net40\win-arm64\ef6.exe",
+  			but its name "ef6"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\EntityFramework.6.5.1\tools\net40\win-x86\ef6.exe",
+  			but its name "ef6"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\EntityFramework.6.5.1\tools\net45\any\ef6.exe",
+  			but its name "ef6"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\EntityFramework.6.5.1\tools\net45\win-arm64\ef6.exe",
+  			but its name "ef6"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\EntityFramework.6.5.1\tools\net45\win-x86\ef6.exe",
+  			but its name "ef6"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\EntityFramework.6.5.1\tools\net6.0\any\ef6.dll",
+  			but its name "ef6"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.AspNet.Identity.Core.2.2.4\lib\net45\Microsoft.AspNet.Identity.Core.dll",
+  			but its name "Microsoft.AspNet.Identity.Core"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.AspNet.Identity.EntityFramework.2.2.4\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll",
+  			but its name "Microsoft.AspNet.Identity.EntityFramework"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.AspNet.Mvc.5.3.0\lib\net45\System.Web.Mvc.dll",
+  			but its name "System.Web.Mvc"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.AspNet.Razor.3.3.0\lib\net45\System.Web.Razor.dll",
+  			but its name "System.Web.Razor"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll",
+  			but its name "System.Web.Optimization"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.Helpers.dll",
+  			but its name "System.Web.Helpers"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.WebPages.Deployment.dll",
+  			but its name "System.Web.WebPages.Deployment"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.WebPages.dll",
+  			but its name "System.Web.WebPages"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.WebPages.Razor.dll",
+  			but its name "System.Web.WebPages.Razor"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\lib\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll",
+  			but its name "Microsoft.CodeDom.Providers.DotNetCompilerPlatform"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tasks\DotNetCompilerPlatformTasks.dll",
+  			but its name "DotNetCompilerPlatformTasks"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tasks\System.Management.dll",
+  			but its name "System.Management"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\csc.exe",
+  			but its name "csc"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\csi.exe",
+  			but its name "csi"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\Microsoft.Build.Tasks.CodeAnalysis.dll",
+  			but its name "Microsoft.Build.Tasks.CodeAnalysis"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\Microsoft.CodeAnalysis.CSharp.dll",
+  			but its name "Microsoft.CodeAnalysis.CSharp"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\Microsoft.CodeAnalysis.CSharp.Scripting.dll",
+  			but its name "Microsoft.CodeAnalysis.CSharp.Scripting"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\Microsoft.CodeAnalysis.dll",
+  			but its name "Microsoft.CodeAnalysis"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\Microsoft.CodeAnalysis.Scripting.dll",
+  			but its name "Microsoft.CodeAnalysis.Scripting"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\Microsoft.CodeAnalysis.VisualBasic.dll",
+  			but its name "Microsoft.CodeAnalysis.VisualBasic"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\Microsoft.DiaSymReader.Native.amd64.dll",
+  			but its name "Microsoft.DiaSymReader.Native.amd64"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\Microsoft.DiaSymReader.Native.x86.dll",
+  			but its name "Microsoft.DiaSymReader.Native.x86"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\System.Buffers.dll",
+  			but its name "System.Buffers"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\System.Collections.Immutable.dll",
+  			but its name "System.Collections.Immutable"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\System.Memory.dll",
+  			but its name "System.Memory"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\System.Numerics.Vectors.dll",
+  			but its name "System.Numerics.Vectors"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\System.Reflection.Metadata.dll",
+  			but its name "System.Reflection.Metadata"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\System.Runtime.CompilerServices.Unsafe.dll",
+  			but its name "System.Runtime.CompilerServices.Unsafe"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\System.Text.Encoding.CodePages.dll",
+  			but its name "System.Text.Encoding.CodePages"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\System.Threading.Tasks.Extensions.dll",
+  			but its name "System.Threading.Tasks.Extensions"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\vbc.exe",
+  			but its name "vbc"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\VBCSCompiler.exe",
+  			but its name "VBCSCompiler"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.Owin.4.2.3\lib\net45\Microsoft.Owin.dll",
+  			but its name "Microsoft.Owin"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.Owin.Host.SystemWeb.4.2.3\lib\net45\Microsoft.Owin.Host.SystemWeb.dll",
+  			but its name "Microsoft.Owin.Host.SystemWeb"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.Owin.Security.4.2.3\lib\net45\Microsoft.Owin.Security.dll",
+  			but its name "Microsoft.Owin.Security"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.Owin.Security.OAuth.4.2.3\lib\net45\Microsoft.Owin.Security.OAuth.dll",
+  			but its name "Microsoft.Owin.Security.OAuth"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll",
+  			but its name "Microsoft.Web.Infrastructure"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Newtonsoft.Json.13.0.1\lib\net20\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Newtonsoft.Json.13.0.1\lib\net35\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Newtonsoft.Json.13.0.1\lib\net40\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Newtonsoft.Json.13.0.1\lib\netstandard1.0\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Newtonsoft.Json.13.0.1\lib\netstandard1.3\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Newtonsoft.Json.13.0.1\lib\netstandard2.0\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Newtonsoft.Json.13.0.4\lib\net20\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Newtonsoft.Json.13.0.4\lib\net35\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Newtonsoft.Json.13.0.4\lib\net40\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Newtonsoft.Json.13.0.4\lib\net6.0\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Newtonsoft.Json.13.0.4\lib\netstandard1.0\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Newtonsoft.Json.13.0.4\lib\netstandard1.3\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Newtonsoft.Json.13.0.4\lib\netstandard2.0\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Owin.1.0\lib\net40\Owin.dll",
+  			but its name "Owin"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\WebGrease.1.6.0\lib\WebGrease.dll",
+  			but its name "WebGrease"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\WebGrease.1.6.0\tools\WG.EXE",
+  			but its name "WG"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          For SearchPath "{HintPathFromItem}".
+          Considered "C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll",
+  			but its name "EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+  			didn't match the expected name "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          For SearchPath "{TargetFrameworkDirectory}".
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\EntityFramework.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\EntityFramework.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\EntityFramework.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Facades\EntityFramework.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Facades\EntityFramework.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Facades\EntityFramework.exe", but it didn't exist.
+          For SearchPath "{AssemblyFoldersFromConfig:C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\AssemblyFolders.config,v4.7.2}".
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\EntityFramework.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\EntityFramework.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\EntityFramework.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\Extensions\Microsoft\SqlDb\EntityFramework.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\Extensions\Microsoft\SqlDb\EntityFramework.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\Extensions\Microsoft\SqlDb\EntityFramework.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\PublicAssemblies\EntityFramework.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\PublicAssemblies\EntityFramework.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\PublicAssemblies\EntityFramework.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v4.5\EntityFramework.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v4.5\EntityFramework.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v4.5\EntityFramework.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VSSDK\VisualStudioIntegration\Common\Assemblies\v4.0\EntityFramework.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VSSDK\VisualStudioIntegration\Common\Assemblies\v4.0\EntityFramework.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VSSDK\VisualStudioIntegration\Common\Assemblies\v4.0\EntityFramework.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\PublicAssemblies\EntityFramework.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\PublicAssemblies\EntityFramework.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\PublicAssemblies\EntityFramework.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v4.5\EntityFramework.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v4.5\EntityFramework.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v4.5\EntityFramework.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v4.0\EntityFramework.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v4.0\EntityFramework.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v4.0\EntityFramework.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v4.0\EntityFramework.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v4.0\EntityFramework.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v4.0\EntityFramework.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v2.0\EntityFramework.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v2.0\EntityFramework.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v2.0\EntityFramework.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VSSDK\VisualStudioIntegration\Common\Assemblies\v2.0\EntityFramework.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VSSDK\VisualStudioIntegration\Common\Assemblies\v2.0\EntityFramework.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VSSDK\VisualStudioIntegration\Common\Assemblies\v2.0\EntityFramework.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v2.0\EntityFramework.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v2.0\EntityFramework.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v2.0\EntityFramework.exe", but it didn't exist.
+          For SearchPath "{Registry:Software\Microsoft\.NETFramework,v4.7.2,AssemblyFoldersEx}".
+          Considered AssemblyFoldersEx locations.
+          For SearchPath "{AssemblyFolders}".
+          Considered "C:\Program Files (x86)\Microsoft.NET\ADOMD.NET\160\EntityFramework.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft.NET\ADOMD.NET\160\EntityFramework.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft.NET\ADOMD.NET\160\EntityFramework.exe", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\EntityFramework.winmd", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\EntityFramework.dll", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\EntityFramework.exe", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2903.0\EntityFramework.winmd", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2903.0\EntityFramework.dll", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2903.0\EntityFramework.exe", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2904.0\EntityFramework.winmd", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2904.0\EntityFramework.dll", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2904.0\EntityFramework.exe", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2905.0\EntityFramework.winmd", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2905.0\EntityFramework.dll", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2905.0\EntityFramework.exe", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2906.0\EntityFramework.winmd", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2906.0\EntityFramework.dll", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2906.0\EntityFramework.exe", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2907.0\EntityFramework.winmd", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2907.0\EntityFramework.dll", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2907.0\EntityFramework.exe", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2908.0\EntityFramework.winmd", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2908.0\EntityFramework.dll", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2908.0\EntityFramework.exe", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2909.0\EntityFramework.winmd", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2909.0\EntityFramework.dll", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2909.0\EntityFramework.exe", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2910.0\EntityFramework.winmd", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2910.0\EntityFramework.dll", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2910.0\EntityFramework.exe", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2911.0\EntityFramework.winmd", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2911.0\EntityFramework.dll", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2911.0\EntityFramework.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\EntityFramework.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\EntityFramework.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\EntityFramework.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\EntityFramework.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\EntityFramework.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\EntityFramework.exe", but it didn't exist.
+          Considered "C:\Program Files\IIS\Microsoft Web Deploy V3\EntityFramework.winmd", but it didn't exist.
+          Considered "C:\Program Files\IIS\Microsoft Web Deploy V3\EntityFramework.dll", but it didn't exist.
+          Considered "C:\Program Files\IIS\Microsoft Web Deploy V3\EntityFramework.exe", but it didn't exist.
+          For SearchPath "{GAC}".
+          Considered "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL", which was not found in the GAC.
+          For SearchPath "bin\".
+          Considered "bin\EntityFramework.winmd", but it didn't exist.
+          Considered "bin\EntityFramework.dll", but it didn't exist.
+          Considered "bin\EntityFramework.exe", but it didn't exist.
+  Primary reference "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(2203,5): warning MSB3245: Could not resolve this reference. Could not locate the assembly "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL". Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors. [C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\WebApplication1.csproj]
+          For SearchPath "{CandidateAssemblyFiles}".
+          Considered "bin\Antlr3.Runtime.dll",
+  			but its name "Antlr3.Runtime"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\EntityFramework.dll",
+  			but its name "EntityFramework"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\EntityFramework.SqlServer.dll", but it didn't exist.
+          Considered "bin\Microsoft.AspNet.Identity.Core.dll",
+  			but its name "Microsoft.AspNet.Identity.Core"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\Microsoft.AspNet.Identity.EntityFramework.dll",
+  			but its name "Microsoft.AspNet.Identity.EntityFramework"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll",
+  			but its name "Microsoft.CodeDom.Providers.DotNetCompilerPlatform"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\Microsoft.Owin.dll",
+  			but its name "Microsoft.Owin"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\Microsoft.Owin.Host.SystemWeb.dll",
+  			but its name "Microsoft.Owin.Host.SystemWeb"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\Microsoft.Owin.Security.dll",
+  			but its name "Microsoft.Owin.Security"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\Microsoft.Owin.Security.OAuth.dll",
+  			but its name "Microsoft.Owin.Security.OAuth"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\Microsoft.Web.Infrastructure.dll",
+  			but its name "Microsoft.Web.Infrastructure"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\Owin.dll",
+  			but its name "Owin"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\csc.exe",
+  			but its name "csc"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\csi.exe",
+  			but its name "csi"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll",
+  			but its name "Microsoft.Build.Tasks.CodeAnalysis"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll",
+  			but its name "Microsoft.CodeAnalysis.CSharp"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll",
+  			but its name "Microsoft.CodeAnalysis.CSharp.Scripting"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\Microsoft.CodeAnalysis.dll",
+  			but its name "Microsoft.CodeAnalysis"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll",
+  			but its name "Microsoft.CodeAnalysis.Scripting"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll",
+  			but its name "Microsoft.CodeAnalysis.VisualBasic"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll",
+  			but its name "Microsoft.DiaSymReader.Native.amd64"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll",
+  			but its name "Microsoft.DiaSymReader.Native.x86"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\Microsoft.Win32.Primitives.dll",
+  			but its name "Microsoft.Win32.Primitives"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.AppContext.dll",
+  			but its name "System.AppContext"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Buffers.dll",
+  			but its name "System.Buffers"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Collections.Immutable.dll",
+  			but its name "System.Collections.Immutable"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Console.dll",
+  			but its name "System.Console"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Diagnostics.DiagnosticSource.dll",
+  			but its name "System.Diagnostics.DiagnosticSource"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Diagnostics.FileVersionInfo.dll",
+  			but its name "System.Diagnostics.FileVersionInfo"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Diagnostics.StackTrace.dll",
+  			but its name "System.Diagnostics.StackTrace"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Globalization.Calendars.dll",
+  			but its name "System.Globalization.Calendars"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.IO.Compression.dll",
+  			but its name "System.IO.Compression"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.IO.Compression.ZipFile.dll",
+  			but its name "System.IO.Compression.ZipFile"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.IO.FileSystem.dll",
+  			but its name "System.IO.FileSystem"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.IO.FileSystem.Primitives.dll",
+  			but its name "System.IO.FileSystem.Primitives"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Memory.dll",
+  			but its name "System.Memory"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Net.Http.dll",
+  			but its name "System.Net.Http"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Net.Sockets.dll",
+  			but its name "System.Net.Sockets"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Numerics.Vectors.dll",
+  			but its name "System.Numerics.Vectors"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Reflection.Metadata.dll",
+  			but its name "System.Reflection.Metadata"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Runtime.CompilerServices.Unsafe.dll",
+  			but its name "System.Runtime.CompilerServices.Unsafe"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll",
+  			but its name "System.Runtime.InteropServices.RuntimeInformation"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Security.Cryptography.Algorithms.dll",
+  			but its name "System.Security.Cryptography.Algorithms"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Security.Cryptography.Encoding.dll",
+  			but its name "System.Security.Cryptography.Encoding"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Security.Cryptography.Primitives.dll",
+  			but its name "System.Security.Cryptography.Primitives"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Security.Cryptography.X509Certificates.dll",
+  			but its name "System.Security.Cryptography.X509Certificates"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Text.Encoding.CodePages.dll",
+  			but its name "System.Text.Encoding.CodePages"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Threading.Tasks.Extensions.dll",
+  			but its name "System.Threading.Tasks.Extensions"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.ValueTuple.dll",
+  			but its name "System.ValueTuple"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Xml.ReaderWriter.dll",
+  			but its name "System.Xml.ReaderWriter"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Xml.XmlDocument.dll",
+  			but its name "System.Xml.XmlDocument"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Xml.XPath.dll",
+  			but its name "System.Xml.XPath"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\System.Xml.XPath.XDocument.dll",
+  			but its name "System.Xml.XPath.XDocument"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\vbc.exe",
+  			but its name "vbc"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\roslyn\VBCSCompiler.exe",
+  			but its name "VBCSCompiler"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\System.Web.Helpers.dll",
+  			but its name "System.Web.Helpers"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\System.Web.Mvc.dll",
+  			but its name "System.Web.Mvc"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\System.Web.Optimization.dll",
+  			but its name "System.Web.Optimization"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\System.Web.Razor.dll",
+  			but its name "System.Web.Razor"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\System.Web.WebPages.Deployment.dll",
+  			but its name "System.Web.WebPages.Deployment"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\System.Web.WebPages.dll",
+  			but its name "System.Web.WebPages"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\System.Web.WebPages.Razor.dll",
+  			but its name "System.Web.WebPages.Razor"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\WebApplication1.dll",
+  			but its name "WebApplication1"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "bin\WebGrease.dll",
+  			but its name "WebGrease"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "obj\Debug\TempPE\Models.Model1.Context.cs.dll",
+  			but its name "Models.Model1.Context.cs"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "obj\Debug\TempPE\Models.Model1.cs.dll",
+  			but its name "Models.Model1.cs"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "obj\Debug\TempPE\Models.Model1.Designer.cs.dll",
+  			but its name "Models.Model1.Designer.cs"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "obj\Debug\WebApplication1.dll",
+  			but its name "WebApplication1"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "Owin.1.0\lib\net40\Owin.dll",
+  			but its name "Owin"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll",
+  			but its name "Antlr3.Runtime"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\EntityFramework.6.5.1\build\Microsoft.Data.Entity.Build.Tasks.dll",
+  			but its name "Microsoft.Data.Entity.Build.Tasks"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\EntityFramework.6.5.1\lib\net40\EntityFramework.dll",
+  			but its name "EntityFramework"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\EntityFramework.6.5.1\lib\net40\EntityFramework.SqlServer.dll",
+  			but its name "EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\EntityFramework.6.5.1\lib\net45\EntityFramework.dll",
+  			but its name "EntityFramework"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll",
+  			but its name "EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\EntityFramework.6.5.1\lib\netstandard2.1\EntityFramework.dll",
+  			but its name "EntityFramework"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\EntityFramework.6.5.1\lib\netstandard2.1\EntityFramework.SqlServer.dll",
+  			but its name "EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\EntityFramework.6.5.1\tools\net40\any\ef6.exe",
+  			but its name "ef6"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\EntityFramework.6.5.1\tools\net40\win-arm64\ef6.exe",
+  			but its name "ef6"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\EntityFramework.6.5.1\tools\net40\win-x86\ef6.exe",
+  			but its name "ef6"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\EntityFramework.6.5.1\tools\net45\any\ef6.exe",
+  			but its name "ef6"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\EntityFramework.6.5.1\tools\net45\win-arm64\ef6.exe",
+  			but its name "ef6"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\EntityFramework.6.5.1\tools\net45\win-x86\ef6.exe",
+  			but its name "ef6"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\EntityFramework.6.5.1\tools\net6.0\any\ef6.dll",
+  			but its name "ef6"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.AspNet.Identity.Core.2.2.4\lib\net45\Microsoft.AspNet.Identity.Core.dll",
+  			but its name "Microsoft.AspNet.Identity.Core"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.AspNet.Identity.EntityFramework.2.2.4\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll",
+  			but its name "Microsoft.AspNet.Identity.EntityFramework"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.AspNet.Mvc.5.3.0\lib\net45\System.Web.Mvc.dll",
+  			but its name "System.Web.Mvc"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.AspNet.Razor.3.3.0\lib\net45\System.Web.Razor.dll",
+  			but its name "System.Web.Razor"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll",
+  			but its name "System.Web.Optimization"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.Helpers.dll",
+  			but its name "System.Web.Helpers"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.WebPages.Deployment.dll",
+  			but its name "System.Web.WebPages.Deployment"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.WebPages.dll",
+  			but its name "System.Web.WebPages"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.WebPages.Razor.dll",
+  			but its name "System.Web.WebPages.Razor"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\lib\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll",
+  			but its name "Microsoft.CodeDom.Providers.DotNetCompilerPlatform"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tasks\DotNetCompilerPlatformTasks.dll",
+  			but its name "DotNetCompilerPlatformTasks"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tasks\System.Management.dll",
+  			but its name "System.Management"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\csc.exe",
+  			but its name "csc"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\csi.exe",
+  			but its name "csi"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\Microsoft.Build.Tasks.CodeAnalysis.dll",
+  			but its name "Microsoft.Build.Tasks.CodeAnalysis"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\Microsoft.CodeAnalysis.CSharp.dll",
+  			but its name "Microsoft.CodeAnalysis.CSharp"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\Microsoft.CodeAnalysis.CSharp.Scripting.dll",
+  			but its name "Microsoft.CodeAnalysis.CSharp.Scripting"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\Microsoft.CodeAnalysis.dll",
+  			but its name "Microsoft.CodeAnalysis"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\Microsoft.CodeAnalysis.Scripting.dll",
+  			but its name "Microsoft.CodeAnalysis.Scripting"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\Microsoft.CodeAnalysis.VisualBasic.dll",
+  			but its name "Microsoft.CodeAnalysis.VisualBasic"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\Microsoft.DiaSymReader.Native.amd64.dll",
+  			but its name "Microsoft.DiaSymReader.Native.amd64"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\Microsoft.DiaSymReader.Native.x86.dll",
+  			but its name "Microsoft.DiaSymReader.Native.x86"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\System.Buffers.dll",
+  			but its name "System.Buffers"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\System.Collections.Immutable.dll",
+  			but its name "System.Collections.Immutable"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\System.Memory.dll",
+  			but its name "System.Memory"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\System.Numerics.Vectors.dll",
+  			but its name "System.Numerics.Vectors"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\System.Reflection.Metadata.dll",
+  			but its name "System.Reflection.Metadata"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\System.Runtime.CompilerServices.Unsafe.dll",
+  			but its name "System.Runtime.CompilerServices.Unsafe"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\System.Text.Encoding.CodePages.dll",
+  			but its name "System.Text.Encoding.CodePages"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\System.Threading.Tasks.Extensions.dll",
+  			but its name "System.Threading.Tasks.Extensions"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\vbc.exe",
+  			but its name "vbc"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\tools\Roslyn-4.1.0\VBCSCompiler.exe",
+  			but its name "VBCSCompiler"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.Owin.4.2.3\lib\net45\Microsoft.Owin.dll",
+  			but its name "Microsoft.Owin"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.Owin.Host.SystemWeb.4.2.3\lib\net45\Microsoft.Owin.Host.SystemWeb.dll",
+  			but its name "Microsoft.Owin.Host.SystemWeb"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.Owin.Security.4.2.3\lib\net45\Microsoft.Owin.Security.dll",
+  			but its name "Microsoft.Owin.Security"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.Owin.Security.OAuth.4.2.3\lib\net45\Microsoft.Owin.Security.OAuth.dll",
+  			but its name "Microsoft.Owin.Security.OAuth"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll",
+  			but its name "Microsoft.Web.Infrastructure"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Newtonsoft.Json.13.0.1\lib\net20\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Newtonsoft.Json.13.0.1\lib\net35\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Newtonsoft.Json.13.0.1\lib\net40\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Newtonsoft.Json.13.0.1\lib\netstandard1.0\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Newtonsoft.Json.13.0.1\lib\netstandard1.3\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Newtonsoft.Json.13.0.1\lib\netstandard2.0\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Newtonsoft.Json.13.0.4\lib\net20\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Newtonsoft.Json.13.0.4\lib\net35\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Newtonsoft.Json.13.0.4\lib\net40\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Newtonsoft.Json.13.0.4\lib\net6.0\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Newtonsoft.Json.13.0.4\lib\netstandard1.0\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Newtonsoft.Json.13.0.4\lib\netstandard1.3\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Newtonsoft.Json.13.0.4\lib\netstandard2.0\Newtonsoft.Json.dll",
+  			but its name "Newtonsoft.Json"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\Owin.1.0\lib\net40\Owin.dll",
+  			but its name "Owin"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\WebGrease.1.6.0\lib\WebGrease.dll",
+  			but its name "WebGrease"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          Considered "packages\WebGrease.1.6.0\tools\WG.EXE",
+  			but its name "WG"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          For SearchPath "{HintPathFromItem}".
+          Considered "C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\packages\EntityFramework.6.5.1\lib\net45\EntityFramework.SqlServer.dll",
+  			but its name "EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+  			didn't match the expected name "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL".
+          For SearchPath "{TargetFrameworkDirectory}".
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\EntityFramework.SqlServer.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\EntityFramework.SqlServer.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\EntityFramework.SqlServer.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Facades\EntityFramework.SqlServer.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Facades\EntityFramework.SqlServer.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Facades\EntityFramework.SqlServer.exe", but it didn't exist.
+          For SearchPath "{AssemblyFoldersFromConfig:C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\AssemblyFolders.config,v4.7.2}".
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\EntityFramework.SqlServer.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\EntityFramework.SqlServer.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\EntityFramework.SqlServer.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\Extensions\Microsoft\SqlDb\EntityFramework.SqlServer.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\Extensions\Microsoft\SqlDb\EntityFramework.SqlServer.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\Extensions\Microsoft\SqlDb\EntityFramework.SqlServer.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\PublicAssemblies\EntityFramework.SqlServer.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\PublicAssemblies\EntityFramework.SqlServer.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\PublicAssemblies\EntityFramework.SqlServer.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v4.5\EntityFramework.SqlServer.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v4.5\EntityFramework.SqlServer.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v4.5\EntityFramework.SqlServer.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VSSDK\VisualStudioIntegration\Common\Assemblies\v4.0\EntityFramework.SqlServer.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VSSDK\VisualStudioIntegration\Common\Assemblies\v4.0\EntityFramework.SqlServer.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VSSDK\VisualStudioIntegration\Common\Assemblies\v4.0\EntityFramework.SqlServer.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\PublicAssemblies\EntityFramework.SqlServer.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\PublicAssemblies\EntityFramework.SqlServer.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\PublicAssemblies\EntityFramework.SqlServer.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v4.5\EntityFramework.SqlServer.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v4.5\EntityFramework.SqlServer.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v4.5\EntityFramework.SqlServer.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v4.0\EntityFramework.SqlServer.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v4.0\EntityFramework.SqlServer.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v4.0\EntityFramework.SqlServer.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v4.0\EntityFramework.SqlServer.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v4.0\EntityFramework.SqlServer.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v4.0\EntityFramework.SqlServer.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v2.0\EntityFramework.SqlServer.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v2.0\EntityFramework.SqlServer.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v2.0\EntityFramework.SqlServer.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VSSDK\VisualStudioIntegration\Common\Assemblies\v2.0\EntityFramework.SqlServer.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VSSDK\VisualStudioIntegration\Common\Assemblies\v2.0\EntityFramework.SqlServer.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VSSDK\VisualStudioIntegration\Common\Assemblies\v2.0\EntityFramework.SqlServer.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v2.0\EntityFramework.SqlServer.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v2.0\EntityFramework.SqlServer.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\ReferenceAssemblies\v2.0\EntityFramework.SqlServer.exe", but it didn't exist.
+          For SearchPath "{Registry:Software\Microsoft\.NETFramework,v4.7.2,AssemblyFoldersEx}".
+          Considered AssemblyFoldersEx locations.
+          For SearchPath "{AssemblyFolders}".
+          Considered "C:\Program Files (x86)\Microsoft.NET\ADOMD.NET\160\EntityFramework.SqlServer.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft.NET\ADOMD.NET\160\EntityFramework.SqlServer.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Microsoft.NET\ADOMD.NET\160\EntityFramework.SqlServer.exe", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\EntityFramework.SqlServer.winmd", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\EntityFramework.SqlServer.dll", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\EntityFramework.SqlServer.exe", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2903.0\EntityFramework.SqlServer.winmd", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2903.0\EntityFramework.SqlServer.dll", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2903.0\EntityFramework.SqlServer.exe", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2904.0\EntityFramework.SqlServer.winmd", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2904.0\EntityFramework.SqlServer.dll", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2904.0\EntityFramework.SqlServer.exe", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2905.0\EntityFramework.SqlServer.winmd", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2905.0\EntityFramework.SqlServer.dll", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2905.0\EntityFramework.SqlServer.exe", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2906.0\EntityFramework.SqlServer.winmd", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2906.0\EntityFramework.SqlServer.dll", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2906.0\EntityFramework.SqlServer.exe", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2907.0\EntityFramework.SqlServer.winmd", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2907.0\EntityFramework.SqlServer.dll", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2907.0\EntityFramework.SqlServer.exe", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2908.0\EntityFramework.SqlServer.winmd", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2908.0\EntityFramework.SqlServer.dll", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2908.0\EntityFramework.SqlServer.exe", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2909.0\EntityFramework.SqlServer.winmd", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2909.0\EntityFramework.SqlServer.dll", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2909.0\EntityFramework.SqlServer.exe", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2910.0\EntityFramework.SqlServer.winmd", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2910.0\EntityFramework.SqlServer.dll", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2910.0\EntityFramework.SqlServer.exe", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2911.0\EntityFramework.SqlServer.winmd", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2911.0\EntityFramework.SqlServer.dll", but it didn't exist.
+          Considered "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2911.0\EntityFramework.SqlServer.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\EntityFramework.SqlServer.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\EntityFramework.SqlServer.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\EntityFramework.SqlServer.exe", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\EntityFramework.SqlServer.winmd", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\EntityFramework.SqlServer.dll", but it didn't exist.
+          Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\EntityFramework.SqlServer.exe", but it didn't exist.
+          Considered "C:\Program Files\IIS\Microsoft Web Deploy V3\EntityFramework.SqlServer.winmd", but it didn't exist.
+          Considered "C:\Program Files\IIS\Microsoft Web Deploy V3\EntityFramework.SqlServer.dll", but it didn't exist.
+          Considered "C:\Program Files\IIS\Microsoft Web Deploy V3\EntityFramework.SqlServer.exe", but it didn't exist.
+          For SearchPath "{GAC}".
+          Considered "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL", which was not found in the GAC.
+          For SearchPath "{RawFileName}".
+          Considered treating "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" as a file name, but it didn't exist.
+          For SearchPath "bin\".
+          Considered "bin\EntityFramework.SqlServer.winmd", but it didn't exist.
+          Considered "bin\EntityFramework.SqlServer.dll", but it didn't exist.
+          Considered "bin\EntityFramework.SqlServer.exe", but it didn't exist.
+  AssemblyFoldersEx location: "{Registry:Software\Microsoft\.NETFramework,v4.7.2,AssemblyFoldersEx}"
+          C:\Program Files (x86)\Microsoft.NET\Primary Interop Assemblies\
+          C:\Program Files\Reference Assemblies\Microsoft\Workflow Manager\1.0\
+          C:\Program Files (x86)\Microsoft Visual Studio\Shared\SDKs\Azure\v2.9\ToolsRef\
+          C:\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office15\
+          C:\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office14\
+          C:\Program Files (x86)\Open XML SDK\V2.5\lib
+          C:\Program Files\Reference Assemblies\Microsoft\Microsoft Identity Extensions\1.0\
+          C:\Program Files\Microsoft SDKs\Azure\.NET SDK\v2.9\ref
+          C:\Program Files (x86)\Common Files\Microsoft Shared\MSEnv\PublicAssemblies
+          C:\Program Files (x86)\Microsoft Chart Controls\Assemblies
+          C:\Program Files\Microsoft SQL Server\160\DTS\Tasks
+          C:\Program Files\Microsoft SQL Server\160\DTS\PipelineComponents\
+          C:\Program Files\Microsoft SQL Server\160\DTS\ForEachEnumerators
+          C:\Program Files\Microsoft SQL Server\160\DTS\Connections\
+GenerateTargetFrameworkMonikerAttribute:
+Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1701,1702 /fullpaths /nostdlib+ /errorreport:prompt /warn:4 /define:DEBUG;TRACE /highentropyva+ /reference:C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll /reference:C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\packages\Microsoft.AspNet.Identity.Core.2.2.4\lib\net45\Microsoft.AspNet.Identity.Core.dll /reference:C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.4\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll /reference:C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\packages\Microsoft.AspNet.Identity.Owin.2.2.4\lib\net45\Microsoft.AspNet.Identity.Owin.dll /reference:C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\lib\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.CSharp.dll" /reference:C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\packages\Microsoft.Owin.4.2.3\lib\net45\Microsoft.Owin.dll /reference:C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\packages\Microsoft.Owin.Host.SystemWeb.4.2.3\lib\net45\Microsoft.Owin.Host.SystemWeb.dll /reference:C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\packages\Microsoft.Owin.Security.Cookies.4.2.3\lib\net45\Microsoft.Owin.Security.Cookies.dll /reference:C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\packages\Microsoft.Owin.Security.4.2.3\lib\net45\Microsoft.Owin.Security.dll /reference:C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\packages\Microsoft.Owin.Security.OAuth.4.2.3\lib\net45\Microsoft.Owin.Security.OAuth.dll /reference:C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\mscorlib.dll" /reference:C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\packages\Newtonsoft.Json.13.0.1\lib\net20\Newtonsoft.Json.dll /reference:C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\Owin.1.0\lib\net40\Owin.dll /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.ComponentModel.DataAnnotations.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Configuration.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Core.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.DataSetExtensions.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Drawing.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.EnterpriseServices.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Net.Http.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Net.Http.WebRequest.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Runtime.Serialization.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Security.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.Abstractions.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.ApplicationServices.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.DynamicData.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.Entity.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.Extensions.dll" /reference:C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.Helpers.dll /reference:C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\packages\Microsoft.AspNet.Mvc.5.3.0\lib\net45\System.Web.Mvc.dll /reference:C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll /reference:C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\packages\Microsoft.AspNet.Razor.3.3.0\lib\net45\System.Web.Razor.dll /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.Routing.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.Services.dll" /reference:C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.WebPages.Deployment.dll /reference:C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.WebPages.dll /reference:C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\packages\Microsoft.AspNet.WebPages.3.3.0\lib\net45\System.Web.WebPages.Razor.dll /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Xml.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Xml.Linq.dll" /reference:C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\packages\WebGrease.1.6.0\lib\WebGrease.dll /debug+ /debug:full /optimize- /out:obj\Debug\WebApplication1.dll /subsystemversion:6.00 /target:library /utf8output /langversion:7.3 App_Start\BundleConfig.cs App_Start\FilterConfig.cs App_Start\IdentityConfig.cs App_Start\RouteConfig.cs App_Start\Startup.Auth.cs Controllers\AccountController.cs Controllers\CustomerController.cs Controllers\HomeController.cs Controllers\InventoryItemController.cs Controllers\ManageController.cs Controllers\OrderController.cs Controllers\ReportController.cs Controllers\RoleController.cs Controllers\ServiceTypeController.cs Global.asax.cs Models\AccountViewModels.cs Models\ApplicationRole.cs Models\CustomerProfile.cs Models\IdentityModels.cs Models\InventoryItem.cs Models\Model1.Context.cs Models\Model1.cs Models\Order.cs Models\OrderStatus.cs Models\ReportViewModel.cs Models\RevenueReportViewModel.cs Models\ServiceType.cs App_Start\DbInitializer.cs Properties\AssemblyInfo.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+CSC : error CS2001: Source file 'C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\Models\Model1.cs' could not be found. [C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\WebApplication1.csproj]
+  CompilerServer: server - server processed compilation - caf74829-859c-4e9f-bf11-335624efd98d
+Done Building Project "C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\WebApplication1.csproj" (Rebuild target(s)) -- FAILED.
+Done Building Project "C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\WebApplication1.sln" (Rebuild target(s)) -- FAILED.
+
+Build FAILED.
+
+"C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\WebApplication1.sln" (Rebuild target) (1) ->
+"C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\WebApplication1.csproj" (Rebuild target) (2) ->
+(ResolveAssemblyReferences target) -> 
+  C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(2203,5): warning MSB3245: Could not resolve this reference. Could not locate the assembly "EntityFramework, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL". Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors. [C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\WebApplication1.csproj]
+  C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets(2203,5): warning MSB3245: Could not resolve this reference. Could not locate the assembly "EntityFramework.SqlServer, Version=6.5.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL". Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors. [C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\WebApplication1.csproj]
+
+
+"C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\WebApplication1.sln" (Rebuild target) (1) ->
+"C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\WebApplication1.csproj" (Rebuild target) (2) ->
+(CoreCompile target) -> 
+  CSC : error CS2001: Source file 'C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\Models\Model1.cs' could not be found. [C:\Users\thula\OneDrive\Documents\GitHub\BozaLaundry\WebApplication1\WebApplication1.csproj]
+
+    2 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:02.00

@@ -13,31 +13,16 @@ namespace WebApplication1.Controllers
     [Authorize]
     public class ManageController : Controller
     {
-        private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
         public ManageController()
         {
         }
 
-        public ManageController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
+        public ManageController(ApplicationUserManager userManager)
         {
             UserManager = userManager;
-            SignInManager = signInManager;
         }
-
-        public ApplicationSignInManager SignInManager
-        {
-            get
-            {
-                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
-            }
-            private set
-            {
-                _signInManager = value;
-            }
-        }
-
         public ApplicationUserManager UserManager
         {
             get
@@ -88,7 +73,7 @@ namespace WebApplication1.Controllers
                 var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
                 if (user != null)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                    await HttpContext.GetOwinContext().Authentication.SignIn(new AuthenticationProperties { IsPersistent = false }, await user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager));
                 }
                 message = ManageMessageId.RemoveLoginSuccess;
             }
@@ -140,7 +125,7 @@ namespace WebApplication1.Controllers
             var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
             if (user != null)
             {
-                await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                await HttpContext.GetOwinContext().Authentication.SignIn(new AuthenticationProperties { IsPersistent = false }, await user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager));
             }
             return RedirectToAction("Index", "Manage");
         }
@@ -155,7 +140,7 @@ namespace WebApplication1.Controllers
             var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
             if (user != null)
             {
-                await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                await HttpContext.GetOwinContext().Authentication.SignIn(new AuthenticationProperties { IsPersistent = false }, await user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager));
             }
             return RedirectToAction("Index", "Manage");
         }
@@ -185,7 +170,7 @@ namespace WebApplication1.Controllers
                 var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
                 if (user != null)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                    await HttpContext.GetOwinContext().Authentication.SignIn(new AuthenticationProperties { IsPersistent = false }, await user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager));
                 }
                 return RedirectToAction("Index", new { Message = ManageMessageId.AddPhoneSuccess });
             }
@@ -208,7 +193,7 @@ namespace WebApplication1.Controllers
             var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
             if (user != null)
             {
-                await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                await HttpContext.GetOwinContext().Authentication.SignIn(new AuthenticationProperties { IsPersistent = false }, await user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager));
             }
             return RedirectToAction("Index", new { Message = ManageMessageId.RemovePhoneSuccess });
         }
@@ -236,7 +221,7 @@ namespace WebApplication1.Controllers
                 var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
                 if (user != null)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                    await HttpContext.GetOwinContext().Authentication.SignIn(new AuthenticationProperties { IsPersistent = false }, await user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager));
                 }
                 return RedirectToAction("Index", new { Message = ManageMessageId.ChangePasswordSuccess });
             }
@@ -268,7 +253,7 @@ namespace WebApplication1.Controllers
                 var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
                 if (user != null)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                    await HttpContext.GetOwinContext().Authentication.SignIn(new AuthenticationProperties { IsPersistent = false }, await user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager));
                 }
                 return RedirectToAction("Index", new { Message = ManageMessageId.SetPasswordSuccess });
             }
@@ -283,20 +268,13 @@ namespace WebApplication1.Controllers
                 _userManager.Dispose();
                 _userManager = null;
             }
+            // No _signInManager to dispose in this version.
             base.Dispose(disposing);
         }
 
 #region Helpers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
-
-        private IAuthenticationManager AuthenticationManager
-        {
-            get
-            {
-                return HttpContext.GetOwinContext().Authentication;
-            }
-        }
 
         private void AddErrors(IdentityResult result)
         {

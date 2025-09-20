@@ -1,0 +1,28 @@
+@model IEnumerable<WebApplication1.Models.Service>
+
+@{ 
+    ViewBag.Title = "Services";
+}
+
+<div class="jumbotron">
+    <h1>Our Services</h1>
+    <p class="lead">Explore the range of services we offer to keep your laundry fresh and clean.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>View All Services</h2>
+        <p>Browse through our complete list of services, including washing, drying, folding, and special care options.</p>
+        <p>@Html.ActionLink("Learn More ", "ServiceList", "Services", null, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Add New Service</h2>
+        <p>Offer a new service to your customers. Define its name, description, and pricing.</p>
+        <p>@Html.ActionLink("Create New ", "Create", "Services", null, new { @class = "btn btn-primary" })</p>
+    </div>
+    <div class="col-md-4">
+        <h2>Manage Services</h2>
+        <p>Edit or delete existing services. Keep your service offerings up-to-date and accurate.</p>
+        <p>@Html.ActionLink("Manage ", "ServiceList", "Services", null, new { @class = "btn btn-primary" })</p>
+    </div>
+</div>

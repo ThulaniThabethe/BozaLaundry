@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BusdbModelStoreContainer" CdmEntityContainer="BusdbEntities">
+    <EntitySetMapping Name="Passengers">
+      <EntityTypeMapping TypeName="BusdbModel.Passenger">
+        <MappingFragment StoreEntitySet="Passengers">
+          <ScalarProperty Name="Passenger_ID" ColumnName="Passenger_ID" />
+          <ScalarProperty Name="PassengerName" ColumnName="PassengerName" />
+          <ScalarProperty Name="PassengerSurname" ColumnName="PassengerSurname" />
+          <ScalarProperty Name="YearOFBirth" ColumnName="YearOFBirth" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Destination" ColumnName="Destination" />
+          <ScalarProperty Name="TravellingDate" ColumnName="TravellingDate" />
+          <ScalarProperty Name="BaseFare" ColumnName="BaseFare" />
+          <ScalarProperty Name="DiscountFare" ColumnName="DiscountFare" />
+          <ScalarProperty Name="FinalFare" ColumnName="FinalFare" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,52 @@
+@model IEnumerable<WebApplication1.Models.InventoryItem>
+
+@{ 
+    ViewBag.Title = "Low Stock Alerts";
+}
+
+<h2>Low Stock Alerts</h2>
+
+<p>
+    Items with quantity less than 10.
+</p>
+
+<div class="table-responsive">
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LowStockThreshold)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LowStockThreshold)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.InventoryItemId })
+        </td>
+    </tr>
+}
+
+</table>
+</div>

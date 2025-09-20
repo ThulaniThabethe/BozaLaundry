@@ -1,0 +1,46 @@
+@model WebApplication1.Models.ServiceType
+
+@{
+    ViewBag.Title = "Service Type Details";
+}
+
+<h2>Service Type Details</h2>
+
+<div>
+    <h4>ServiceType</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-12">
+            <dl class="dl-horizontal">
+                <dt class="col-md-4">
+                    @Html.DisplayNameFor(model => model.ServiceTypeName)
+                </dt>
+
+                <dd class="col-md-8">
+                    @Html.DisplayFor(model => model.ServiceTypeName)
+                </dd>
+
+                <dt class="col-md-4">
+                    @Html.DisplayNameFor(model => model.PricePerUnit)
+                </dt>
+
+                <dd class="col-md-8">
+                    @Html.DisplayFor(model => model.PricePerUnit)
+                </dd>
+
+                <dt class="col-md-4">
+                    @Html.DisplayNameFor(model => model.Description)
+                </dt>
+
+                <dd class="col-md-8">
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
+
+            </dl>
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ServiceTypeId })
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,201 @@
+
+
+
+
+
+
+public static class ArgumentNotNull
+{
+    public static void ArgumentNotNull<T>(T arg, string name) where T : class
+    {
+        if (arg == null)
+        {
+            throw new ArgumentNullException(name);
+        }
+    }
+}
+
+public static class MetadataConstants
+{
+    public const string CSDL_EXTENSION = ".csdl";
+    public const string CSDL_EDMX_SECTION_NAME = "ConceptualModels";
+    public const string CSDL_ROOT_ELEMENT_NAME = "Schema";
+    public const string EDM_ANNOTATION_09_02 = "http://schemas.microsoft.com/ado/2009/02/edm/annotation";
+
+    public const string SSDL_EXTENSION = ".ssdl";
+    public const string SSDL_EDMX_SECTION_NAME = "StorageModels";
+    public const string SSDL_ROOT_ELEMENT_NAME = "Schema";
+
+    public const string MSL_EXTENSION = ".msl";
+    public const string MSL_EDMX_SECTION_NAME = "Mappings";
+    public const string MSL_ROOT_ELEMENT_NAME = "Mapping";
+
+    public const string EDMX_EXTENSION = ".edmx";
+    public const string EDMX_ROOT_ELEMENT_NAME = "Edmx";
+    public const string EDMX_VERSION_ATTRIBUTE_NAME = "Version";
+    public const string EDMX_VERSION_1_0 = "1.0";
+    public const string EDMX_VERSION_2_0 = "2.0";
+    public const string EDMX_VERSION_3_0 = "3.0";
+}
+
+public static class MetadataLoader
+{
+    public static MetadataWorkspace LoadMetadata(string csdlPath, string ssdlPath, string mslPath)
+    {
+        ArgumentNotNull.ArgumentNotNull(csdlPath, "csdlPath");
+        ArgumentNotNull.ArgumentNotNull(ssdlPath, "ssdlPath");
+        ArgumentNotNull.ArgumentNotNull(mslPath, "mslPath");
+
+        var edmItemCollection = LoadEdmItemCollection(csdlPath);
+        var storeItemCollection = LoadStoreItemCollection(ssdlPath);
+        var storageMappingItemCollection = LoadStorageMappingItemCollection(mslPath, storeItemCollection, edmItemCollection);
+
+        return new MetadataWorkspace(
+            () => edmItemCollection,
+            () => storeItemCollection,
+            () => storageMappingItemCollection);
+    }
+
+    private static EdmItemCollection LoadEdmItemCollection(string csdlPath)
+    {
+        using (var reader = XmlReader.Create(csdlPath))
+        {
+            IList<EdmSchemaError> errors;
+            var itemCollection = MetadataItemCollectionFactory.CreateEdmItemCollection(new[] { reader }, out errors);
+
+            if (errors != null && errors.Count > 0)
+            {
+                throw new MetadataException(
+                    string.Format(
+                        CultureInfo.InvariantCulture,
+                        "Errors found in {0}:\n{1}",
+                        csdlPath,
+                        string.Join("\n", errors.Select(e => e.Message))));
+            }
+
+            return itemCollection;
+        }
+    }
+
+    private static StoreItemCollection LoadStoreItemCollection(string ssdlPath)
+    {
+        using (var reader = XmlReader.Create(ssdlPath))
+        {
+            IList<EdmSchemaError> errors;
+            var itemCollection = MetadataItemCollectionFactory.CreateStoreItemCollection(new[] { reader }, out errors);
+
+            if (errors != null && errors.Count > 0)
+            {
+                throw new MetadataException(
+                    string.Format(
+                        CultureInfo.InvariantCulture,
+                        "Errors found in {0}:\n{1}",
+                        ssdlPath,
+                        string.Join("\n", errors.Select(e => e.Message))));
+            }
+
+            return itemCollection;
+        }
+    }
+
+    private static StorageMappingItemCollection LoadStorageMappingItemCollection(
+        string mslPath,
+        StoreItemCollection storeItemCollection,
+        EdmItemCollection edmItemCollection)
+    {
+        using (var reader = XmlReader.Create(mslPath))
+        {
+            IList<EdmSchemaError> errors;
+            var itemCollection = MetadataItemCollectionFactory.CreateStorageMappingItemCollection(
+                edmItemCollection,
+                storeItemCollection,
+                new[] { reader },
+                out errors);
+
+            if (errors != null && errors.Count > 0)
+            {
+                throw new MetadataException(
+                    string.Format(
+                        CultureInfo.InvariantCulture,
+                        "Errors found in {0}:\n{1}",
+                        mslPath,
+                        string.Join("\n", errors.Select(e => e.Message))));
+            }
+
+            return itemCollection;
+        }
+    }
+}
+
+public static class CodeGenerationTools
+{
+    public static string EscapeString(string value)
+    {
+        if (string.IsNullOrEmpty(value))
+        {
+            return value;
+        }
+
+        return value
+            .Replace("\\", "\\\\")
+            .Replace("\"", "\\\"")
+            .Replace("\0", "\\0")
+            .Replace("\a", "\\a")
+            .Replace("\b", "\\b")
+            .Replace("\f", "\\f")
+            .Replace("\n", "\\n")
+            .Replace("\r", "\\r")
+            .Replace("\t", "\\t")
+            .Replace("\v", "\\v");
+    }
+
+    public static string GetTypeName(TypeUsage typeUsage)
+    {
+        if (typeUsage == null)
+        {
+            throw new ArgumentNullException("typeUsage");
+        }
+
+        if (typeUsage.EdmType is PrimitiveType)
+        {
+            var primitiveType = (PrimitiveType)typeUsage.EdmType;
+
+            if (primitiveType.ClrEquivalentType == typeof(string)
+                || primitiveType.ClrEquivalentType == typeof(byte[])
+                || primitiveType.ClrEquivalentType == typeof(System.Data.Linq.Binary))
+            {
+                return primitiveType.ClrEquivalentType.FullName;
+            }
+
+            return typeUsage.IsNullable ?
+                string.Format(CultureInfo.InvariantCulture, "Nullable<{0}>", primitiveType.ClrEquivalentType.FullName) :
+                primitiveType.ClrEquivalentType.FullName;
+        }
+
+        if (typeUsage.EdmType is ComplexType)
+        {
+            return ((ComplexType)typeUsage.EdmType).FullName;
+        }
+
+        if (typeUsage.EdmType is EntityType)
+        {
+            return ((EntityType)typeUsage.EdmType).FullName;
+        }
+
+        if (typeUsage.EdmType is EnumType)
+        {
+            return ((EnumType)typeUsage.EdmType).FullName;
+        }
+
+        throw new ArgumentException("typeUsage");
+    }
+}
+
+public static class MetadataException : Exception
+{
+    public MetadataException(string message)
+        : base(message)
+    {
+    }
+}
+
