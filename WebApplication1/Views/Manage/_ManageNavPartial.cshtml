@@ -1,0 +1,26 @@
+@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+    if (manager.HasTwoFactorEnabled(User.Identity.GetUserId()))
+    {
+        <li>@Html.ActionLink("Two-Factor Authentication", "TwoFactorAuthentication", "Manage")</li>
+    }
+}
+
+<ul class="nav nav-pills nav-stacked">
+    <li>@Html.ActionLink("Change password", "ChangePassword", "Manage")</li>
+    <li>@Html.ActionLink("Manage external logins", "ManageLogins", "Manage")</li>
+    @if (Request.IsAuthenticated)
+    {
+        var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+        if (manager.HasTwoFactorEnabled(User.Identity.GetUserId()))
+        {
+            <li>@Html.ActionLink("Disable two-factor authentication", "DisableTwoFactorAuthentication", "Manage")</li>
+        }
+        else
+        {
+            <li>@Html.ActionLink("Enable two-factor authentication", "EnableTwoFactorAuthentication", "Manage")</li>
+        }
+    }
+</ul>

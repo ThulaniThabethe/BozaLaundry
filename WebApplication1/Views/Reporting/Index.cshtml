@@ -1,0 +1,102 @@
+@{
+    ViewBag.Title = "Reporting Dashboard";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3>Key Metrics and Reports</h3>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Total Orders</h3>
+            </div>
+            <div class="panel-body">
+                <h1>1,234</h1>
+                <p>Total laundry orders processed this month.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h3 class="panel-title">Revenue</h3>
+            </div>
+            <div class="panel-body">
+                <h1>$12,345.00</h1>
+                <p>Total revenue generated this month.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">Active Customers</h3>
+            </div>
+            <div class="panel-body">
+                <h1>567</h1>
+                <p>Number of active customers.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h4>Recent Order Activity</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Order ID</th>
+            <th>Customer</th>
+            <th>Status</th>
+            <th>Amount</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>#001</td>
+            <td>John Doe</td>
+            <td>Completed</td>
+            <td>$25.00</td>
+            <td>2023-10-26</td>
+        </tr>
+        <tr>
+            <td>#002</td>
+            <td>Jane Smith</td>
+            <td>In Progress</td>
+            <td>$30.00</td>
+            <td>2023-10-25</td>
+        </tr>
+        <tr>
+            <td>#003</td>
+            <td>Peter Jones</td>
+            <td>Pending</td>
+            <td>$15.00</td>
+            <td>2023-10-24</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Inventory Levels (Low Stock)</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Item Name</th>
+            <th>Quantity</th>
+            <th>Unit</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Laundry Detergent (Powder)</td>
+            <td>5</td>
+            <td>Kg</td>
+        </tr>
+        <tr>
+            <td>Stain Remover</td>
+            <td>10</td>
+            <td>Bottles</td>
+        </tr>
+    </tbody>
+</table>
