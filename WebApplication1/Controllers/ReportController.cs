@@ -3,6 +3,7 @@ using WebApplication1.Models;
 using System.Linq;
 using System.Collections.Generic;
 using System;
+using System.Data.Entity;
 
 namespace WebApplication1.Controllers
 {
@@ -22,8 +23,8 @@ namespace WebApplication1.Controllers
                                     .ToList();
 
             // Calculate Customer Retention Rate
-            var allCustomers = db.CustomerProfiles.Select(c => c.CustomerProfileId).Distinct().ToList();
-            var returningCustomers = db.Orders.GroupBy(o => o.CustomerProfileId)
+            var allCustomers = db.CustomerProfiles.Select(c => c.CustomerId).Distinct().ToList();
+            var returningCustomers = db.Orders.GroupBy(o => o.CustomerId)
                                             .Where(g => g.Count() > 1)
                                             .Select(g => g.Key)
                                             .ToList();
@@ -31,13 +32,13 @@ namespace WebApplication1.Controllers
 
             // Calculate Daily Revenue
             var dailyRevenues = orders.GroupBy(o => o.OrderDate.Date)
-                                      .Select(g => new DailyRevenue { Date = g.Key, TotalRevenue = g.Sum(o => o.TotalAmount) })
+                                      .Select(g => new DailyRevenue { Date = g.Key, TotalRevenue = g.Sum(o => o.TotalPrice) })
                                       .OrderBy(x => x.Date)
                                       .ToList();
 
             // Calculate Weekly Revenue
-            var weeklyRevenues = orders.GroupBy(o => new { Year = o.OrderDate.Year, Week = System.Data.Entity.DbFunctions.TruncateTime(o.OrderDate).Value.DayOfYear / 7 })
-                                       .Select(g => new WeeklyRevenue { Year = g.Key.Year, WeekNumber = g.Key.Week, TotalRevenue = g.Sum(o => o.TotalAmount) })
+            var weeklyRevenues = orders.GroupBy(o => new { Year = o.OrderDate.Year, Week = o.OrderDate.DayOfYear / 7 })
+                                       .Select(g => new WeeklyRevenue { Year = g.Key.Year, WeekNumber = g.Key.Week, TotalRevenue = g.Sum(o => o.TotalPrice) })
                                        .OrderBy(x => x.Year).ThenBy(x => x.WeekNumber)
                                        .ToList();
 

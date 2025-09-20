@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -8,11 +9,11 @@ namespace WebApplication1.Models
 {
     public class Order
     {
-        public int Id { get; set; }
+        public int OrderId { get; set; }
 
-        [Required]
-        public int CustomerId { get; set; }
-        public Customer Customer { get; set; }
+        public string CustomerId { get; set; }
+        [ForeignKey("CustomerId")]
+        public virtual CustomerProfile CustomerProfile { get; set; }
 
         public DateTime OrderDate { get; set; }
 
@@ -20,11 +21,25 @@ namespace WebApplication1.Models
 
         public DateTime? DeliveryDate { get; set; }
 
-        [Required]
-        public string Status { get; set; } // e.g., Pending, In Progress, Ready for Pickup, Delivered
+        public int StatusId { get; set; }
+        [ForeignKey("StatusId")]
+        public virtual OrderStatus OrderStatus { get; set; }
+
+        public int ServiceTypeId { get; set; }
+        [ForeignKey("ServiceTypeId")]
+        public virtual ServiceType ServiceType { get; set; }
+
+        public double? Weight { get; set; }
+
+        public string SpecialInstructions { get; set; }
+
+        [Column(TypeName = "decimal(18, 2)")]
+        public decimal TotalPrice { get; set; }
+
+        public string InvoiceNumber { get; set; }
+        public DateTime? ReceiptGeneratedDate { get; set; }
+        public bool IsInvoiceGenerated { get; set; }
 
         public ICollection<OrderItem> OrderItems { get; set; }
-
-        public decimal TotalAmount { get; set; }
     }
 }

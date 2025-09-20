@@ -2,8 +2,8 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
-using WebApplication1.Models;
 using System;
+using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
@@ -19,7 +19,7 @@ namespace WebApplication1.Controllers
 
         public ActionResult OrderList()
         {
-            var orders = db.Orders.Include(o => o.Customer);
+            var orders = db.Orders.Include(o => o.CustomerProfile).Include(o => o.OrderStatus);
             return View(orders.ToList());
         }
 
@@ -30,7 +30,7 @@ namespace WebApplication1.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Order order = db.Orders.Include(o => o.Customer).Include(o => o.OrderItems.Select(oi => oi.Service)).FirstOrDefault(o => o.Id == id);
+            Order order = db.Orders.Include(o => o.CustomerProfile).Include(o => o.OrderStatus).Include(o => o.ServiceType).Include(o => o.OrderItems.Select(oi => oi.Service)).FirstOrDefault(o => o.OrderId == id);
             if (order == null)
             {
                 return HttpNotFound();
@@ -41,21 +41,21 @@ namespace WebApplication1.Controllers
         // GET: Orders/Create
         public ActionResult Create()
         {
-            ViewBag.CustomerId = new SelectList(db.Customers, "Id", "Name");
-            ViewBag.ServiceId = new SelectList(db.Services, "Id", "Name");
+            ViewBag.CustomerId = new SelectList(db.CustomerProfiles, "Id", "Name");
+            ViewBag.ServiceId = new SelectList(db.ServiceTypes, "ServiceTypeId", "Name");
             return View();
         }
 
         // POST: Orders/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,CustomerId,OrderDate,PickupDate,DeliveryDate,Status,TotalAmount")] Order order, int[] serviceIds, decimal[] quantities)
+        public ActionResult Create([Bind(Include = "OrderId,CustomerId,OrderDate,PickupDate,DeliveryDate,StatusId,TotalPrice")] Order order, int[] serviceIds, decimal[] quantities)
         {
             if (ModelState.IsValid)
             {
                 order.OrderDate = DateTime.Now;
-                order.Status = "Pending";
-                order.TotalAmount = 0;
+                order.StatusId = 1; // Assuming 1 is Pending status
+                order.TotalPrice = 0;
 
                 db.Orders.Add(order);
                 db.SaveChanges();
@@ -64,18 +64,18 @@ namespace WebApplication1.Controllers
                 {
                     for (int i = 0; i < serviceIds.Length; i++)
                     {
-                        var service = db.Services.Find(serviceIds[i]);
+                        var service = db.ServiceTypes.Find(serviceIds[i]);
                         if (service != null)
                         {
                             var orderItem = new OrderItem
                             {
-                                OrderId = order.Id,
-                                ServiceId = service.Id,
+                                OrderId = order.OrderId,
+                                ServiceId = service.ServiceTypeId,
                                 Quantity = quantities[i],
-                                PricePerUnit = service.Price
+                                PricePerUnit = service.PricePerUnit
                             };
                             db.OrderItems.Add(orderItem);
-                            order.TotalAmount += (orderItem.Quantity * orderItem.PricePerUnit);
+                            order.TotalPrice += (orderItem.Quantity * orderItem.PricePerUnit);
                         }
                     }
                     db.SaveChanges();
@@ -84,8 +84,8 @@ namespace WebApplication1.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CustomerId = new SelectList(db.Customers, "Id", "Name", order.CustomerId);
-            ViewBag.ServiceId = new SelectList(db.Services, "Id", "Name");
+            ViewBag.CustomerId = new SelectList(db.CustomerProfiles, "Id", "Name", order.CustomerId);
+            ViewBag.ServiceId = new SelectList(db.ServiceTypes, "ServiceTypeId", "Name");
             return View(order);
         }
 
@@ -96,51 +96,51 @@ namespace WebApplication1.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Order order = db.Orders.Include(o => o.OrderItems).FirstOrDefault(o => o.Id == id);
+            Order order = db.Orders.Include(o => o.OrderItems).FirstOrDefault(o => o.OrderId == id);
             if (order == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.CustomerId = new SelectList(db.Customers, "Id", "Name", order.CustomerId);
-            ViewBag.ServiceId = new SelectList(db.Services, "Id", "Name");
+            ViewBag.CustomerId = new SelectList(db.CustomerProfiles, "Id", "Name", order.CustomerId);
+            ViewBag.ServiceId = new SelectList(db.ServiceTypes, "ServiceTypeId", "Name");
             return View(order);
         }
 
         // POST: Orders/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,CustomerId,OrderDate,PickupDate,DeliveryDate,Status,TotalAmount")] Order order, int[] serviceIds, decimal[] quantities)
+        public ActionResult Edit([Bind(Include = "OrderId,CustomerId,OrderDate,PickupDate,DeliveryDate,StatusId,TotalPrice")] Order order, int[] serviceIds, decimal[] quantities)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(order).State = EntityState.Modified;
-                db.OrderItems.RemoveRange(db.OrderItems.Where(oi => oi.OrderId == order.Id));
-                order.TotalAmount = 0;
+                db.OrderItems.RemoveRange(db.OrderItems.Where(oi => oi.OrderId == order.OrderId));
+                order.TotalPrice = 0;
 
                 if (serviceIds != null && quantities != null)
                 {
                     for (int i = 0; i < serviceIds.Length; i++)
                     {
-                        var service = db.Services.Find(serviceIds[i]);
+                        var service = db.ServiceTypes.Find(serviceIds[i]);
                         if (service != null)
                         {
                             var orderItem = new OrderItem
                             {
-                                OrderId = order.Id,
-                                ServiceId = service.Id,
+                                OrderId = order.OrderId,
+                                ServiceId = service.ServiceTypeId,
                                 Quantity = quantities[i],
-                                PricePerUnit = service.Price
+                                PricePerUnit = service.PricePerUnit
                             };
                             db.OrderItems.Add(orderItem);
-                            order.TotalAmount += (orderItem.Quantity * orderItem.PricePerUnit);
+                            order.TotalPrice += (orderItem.Quantity * orderItem.PricePerUnit);
                         }
                     }
                 }
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CustomerId = new SelectList(db.Customers, "Id", "Name", order.CustomerId);
-            ViewBag.ServiceId = new SelectList(db.Services, "Id", "Name");
+            ViewBag.CustomerId = new SelectList(db.CustomerProfiles, "Id", "Name", order.CustomerId);
+            ViewBag.ServiceId = new SelectList(db.ServiceTypes, "ServiceTypeId", "Name");
             return View(order);
         }
 
@@ -151,7 +151,7 @@ namespace WebApplication1.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Order order = db.Orders.Include(o => o.Customer).FirstOrDefault(o => o.Id == id);
+            Order order = db.Orders.Include(o => o.CustomerProfile).FirstOrDefault(o => o.OrderId == id);
             if (order == null)
             {
                 return HttpNotFound();
@@ -165,9 +165,12 @@ namespace WebApplication1.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Order order = db.Orders.Find(id);
-            db.OrderItems.RemoveRange(db.OrderItems.Where(oi => oi.OrderId == id));
-            db.Orders.Remove(order);
-            db.SaveChanges();
+            if (order != null)
+            {
+                db.OrderItems.RemoveRange(db.OrderItems.Where(oi => oi.OrderId == id));
+                db.Orders.Remove(order);
+                db.SaveChanges();
+            }
             return RedirectToAction("Index");
         }
 

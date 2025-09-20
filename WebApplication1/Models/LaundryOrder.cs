@@ -7,7 +7,7 @@ using System.Web;
 
 namespace WebApplication1.Models
 {
-    public enum OrderStatus
+    public enum LaundryOrderStatus
     {
         Pending,
         InProgress,
@@ -41,9 +41,9 @@ namespace WebApplication1.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime? DeliveryDate { get; set; }
 
-        public OrderStatus Status { get; set; }
+        public LaundryOrderStatus Status { get; set; }
 
-        [Column(TypeName = "money")]
+        [Column(TypeName = "decimal(18, 2)")]
         public decimal TotalPrice { get; set; }
 
         public string Notes { get; set; }

@@ -27,11 +27,13 @@ namespace WebApplication1.Models
         {
         }
 
-        public System.Data.Entity.DbSet<WebApplication1.Models.Order> Orders { get; set; }
-        public System.Data.Entity.DbSet<WebApplication1.Models.ServiceType> ServiceTypes { get; set; }
-        public System.Data.Entity.DbSet<WebApplication1.Models.OrderStatus> OrderStatuses { get; set; }
-        public System.Data.Entity.DbSet<WebApplication1.Models.CustomerProfile> CustomerProfiles { get; set; }
-        public System.Data.Entity.DbSet<WebApplication1.Models.InventoryItem> InventoryItems { get; set; }
+        public System.Data.Entity.DbSet<Order> Orders { get; set; }
+        public System.Data.Entity.DbSet<OrderItem> OrderItems { get; set; }
+        public System.Data.Entity.DbSet<Service> Services { get; set; }
+        public System.Data.Entity.DbSet<ServiceType> ServiceTypes { get; set; }
+        public System.Data.Entity.DbSet<OrderStatus> OrderStatuses { get; set; }
+        public System.Data.Entity.DbSet<CustomerProfile> CustomerProfiles { get; set; }
+        public System.Data.Entity.DbSet<InventoryItem> InventoryItems { get; set; }
 
         public static ApplicationDbContext Create()
         {

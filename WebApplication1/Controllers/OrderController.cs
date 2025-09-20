@@ -1,3 +1,4 @@
+using System;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
@@ -28,6 +29,7 @@ namespace WebApplication1.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            var userId = User.Identity.GetUserId();
             Order order = await db.Orders.Include(o => o.CustomerProfile).Include(o => o.ServiceType).Include(o => o.OrderStatus).FirstOrDefaultAsync(o => o.OrderId == id && o.CustomerProfile.CustomerId == userId);
             if (order == null)
             {
@@ -71,13 +73,13 @@ namespace WebApplication1.Controllers
                     {
                         order.TotalPrice = serviceType.BundlePrice.Value;
                     }
-                    else if (order.Weight.HasValue && serviceType.MinWeight.HasValue && serviceType.MaxWeight.HasValue && order.Weight >= serviceType.MinWeight.Value && order.Weight <= serviceType.MaxWeight.Value)
+                    else if (order.Weight.HasValue && serviceType.MinWeight.HasValue && serviceType.MaxWeight.HasValue && order.Weight >= (double)serviceType.MinWeight.Value && order.Weight <= (double)serviceType.MaxWeight.Value)
                     {
-                        order.TotalPrice = order.Weight.Value * serviceType.PricePerUnit;
+                        order.TotalPrice = (decimal)(order.Weight.Value * (double)serviceType.PricePerUnit);
                     }
                     else
                     {
-                        order.TotalPrice = order.Weight * serviceType.PricePerUnit;
+                        order.TotalPrice = (decimal)(order.Weight.Value * (double)serviceType.PricePerUnit);
                     }
                 }
 
@@ -144,13 +146,13 @@ namespace WebApplication1.Controllers
                     {
                         existingOrder.TotalPrice = serviceType.BundlePrice.Value;
                     }
-                    else if (existingOrder.Weight.HasValue && serviceType.MinWeight.HasValue && serviceType.MaxWeight.HasValue && existingOrder.Weight >= serviceType.MinWeight.Value && existingOrder.Weight <= serviceType.MaxWeight.Value)
+                    else if (existingOrder.Weight.HasValue && serviceType.MinWeight.HasValue && serviceType.MaxWeight.HasValue && existingOrder.Weight >= (double)serviceType.MinWeight.Value && existingOrder.Weight <= (double)serviceType.MaxWeight.Value)
                     {
-                        existingOrder.TotalPrice = existingOrder.Weight.Value * serviceType.PricePerUnit;
+                        existingOrder.TotalPrice = (decimal)(existingOrder.Weight.Value * (double)serviceType.PricePerUnit);
                     }
                     else
                     {
-                        existingOrder.TotalPrice = existingOrder.Weight * serviceType.PricePerUnit;
+                        existingOrder.TotalPrice = (decimal)(existingOrder.Weight.Value * (double)serviceType.PricePerUnit);
                     }
                 }
 
@@ -170,6 +172,7 @@ namespace WebApplication1.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            var userId = User.Identity.GetUserId();
             Order order = await db.Orders.Include(o => o.ServiceType).Include(o => o.OrderStatus).Include(o => o.CustomerProfile).FirstOrDefaultAsync(o => o.OrderId == id && o.CustomerProfile.CustomerId == userId);
             if (order == null)
             {

@@ -22,6 +22,10 @@ namespace WebApplication1.Models
         [StringLength(50)]
         public string Unit { get; set; }
 
+        [Required]
+        [Range(0, int.MaxValue)]
+        public int LowStockThreshold { get; set; }
+
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime LastUpdated { get; set; }

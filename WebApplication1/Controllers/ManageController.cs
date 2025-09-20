@@ -1,12 +1,14 @@
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
+using Microsoft.Owin.Host.SystemWeb;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using WebApplication1.Models;
-using WebApplication1.Models.Identity;
 
 namespace WebApplication1.Controllers
 {
@@ -32,6 +34,14 @@ namespace WebApplication1.Controllers
             private set
             {
                 _userManager = value;
+            }
+        }
+
+        private IAuthenticationManager AuthenticationManager
+        {
+            get
+            {
+                return HttpContext.GetOwinContext().Authentication;
             }
         }
 
@@ -73,7 +83,7 @@ namespace WebApplication1.Controllers
                 var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
                 if (user != null)
                 {
-                    await HttpContext.GetOwinContext().Authentication.SignIn(new AuthenticationProperties { IsPersistent = false }, await user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager));
+                    HttpContext.GetOwinContext().Authentication.SignIn(new AuthenticationProperties { IsPersistent = false }, await user.GenerateUserIdentityAsync((UserManager<ApplicationUser>)UserManager));
                 }
                 message = ManageMessageId.RemoveLoginSuccess;
             }
@@ -125,7 +135,7 @@ namespace WebApplication1.Controllers
             var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
             if (user != null)
             {
-                await HttpContext.GetOwinContext().Authentication.SignIn(new AuthenticationProperties { IsPersistent = false }, await user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager));
+                HttpContext.GetOwinContext().Authentication.SignIn(new AuthenticationProperties { IsPersistent = false }, await user.GenerateUserIdentityAsync((UserManager<ApplicationUser>)UserManager));
             }
             return RedirectToAction("Index", "Manage");
         }
@@ -140,7 +150,7 @@ namespace WebApplication1.Controllers
             var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
             if (user != null)
             {
-                await HttpContext.GetOwinContext().Authentication.SignIn(new AuthenticationProperties { IsPersistent = false }, await user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager));
+                HttpContext.GetOwinContext().Authentication.SignIn(new AuthenticationProperties { IsPersistent = false }, await user.GenerateUserIdentityAsync((UserManager<ApplicationUser>)UserManager));
             }
             return RedirectToAction("Index", "Manage");
         }
@@ -170,7 +180,7 @@ namespace WebApplication1.Controllers
                 var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
                 if (user != null)
                 {
-                    await HttpContext.GetOwinContext().Authentication.SignIn(new AuthenticationProperties { IsPersistent = false }, await user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager));
+                    HttpContext.GetOwinContext().Authentication.SignIn(new AuthenticationProperties { IsPersistent = false }, await user.GenerateUserIdentityAsync((UserManager<ApplicationUser>)UserManager));
                 }
                 return RedirectToAction("Index", new { Message = ManageMessageId.AddPhoneSuccess });
             }
@@ -193,7 +203,7 @@ namespace WebApplication1.Controllers
             var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
             if (user != null)
             {
-                await HttpContext.GetOwinContext().Authentication.SignIn(new AuthenticationProperties { IsPersistent = false }, await user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager));
+                HttpContext.GetOwinContext().Authentication.SignIn(new AuthenticationProperties { IsPersistent = false }, await user.GenerateUserIdentityAsync((UserManager<ApplicationUser>)UserManager));
             }
             return RedirectToAction("Index", new { Message = ManageMessageId.RemovePhoneSuccess });
         }
@@ -221,7 +231,7 @@ namespace WebApplication1.Controllers
                 var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
                 if (user != null)
                 {
-                    await HttpContext.GetOwinContext().Authentication.SignIn(new AuthenticationProperties { IsPersistent = false }, await user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager));
+                    HttpContext.GetOwinContext().Authentication.SignIn(new AuthenticationProperties { IsPersistent = false }, await user.GenerateUserIdentityAsync((UserManager<ApplicationUser>)UserManager));
                 }
                 return RedirectToAction("Index", new { Message = ManageMessageId.ChangePasswordSuccess });
             }
@@ -253,7 +263,7 @@ namespace WebApplication1.Controllers
                 var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
                 if (user != null)
                 {
-                    await HttpContext.GetOwinContext().Authentication.SignIn(new AuthenticationProperties { IsPersistent = false }, await user.GenerateUserIdentityAsync((ApplicationUserManager)UserManager));
+                    HttpContext.GetOwinContext().Authentication.SignIn(new AuthenticationProperties { IsPersistent = false }, await user.GenerateUserIdentityAsync((UserManager<ApplicationUser>)UserManager));
                 }
                 return RedirectToAction("Index", new { Message = ManageMessageId.SetPasswordSuccess });
             }
@@ -305,6 +315,7 @@ namespace WebApplication1.Controllers
             Error
         }
 
+        // Helper method to get OwinContext
 #endregion
     }
 }

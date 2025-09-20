@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-using System.ComponentModel.DataAnnotations;
 
 namespace WebApplication1.Models
 {
@@ -20,19 +20,15 @@ namespace WebApplication1.Models
         [StringLength(256)]
         public string Email { get; set; }
 
+        [Required]
         [StringLength(20)]
         public string PhoneNumber { get; set; }
 
-        [StringLength(256)]
+        [Required]
+        [StringLength(100)]
         public string Address { get; set; }
 
-        public DateTime RegistrationDate { get; set; }
-
-        // Navigation property for the associated ApplicationUser
-        [System.ComponentModel.DataAnnotations.Schema.ForeignKey("Customer")]
-        public virtual ApplicationUser ApplicationUser { get; set; }
-
-        // Navigation property for orders placed by this customer
-        public virtual ICollection<Order> Orders { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
     }
 }

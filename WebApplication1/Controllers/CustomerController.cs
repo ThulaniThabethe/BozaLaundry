@@ -19,7 +19,7 @@ namespace WebApplication1.Controllers
         public async Task<ActionResult> Index()
         {
             var userId = User.Identity.GetUserId();
-            var customerProfile = await db.CustomerProfiles.Include(c => c.ApplicationUser).FirstOrDefaultAsync(c => c.CustomerId == userId);
+            var customerProfile = await db.CustomerProfiles.FirstOrDefaultAsync(c => c.CustomerId == userId);
 
             if (customerProfile == null)
             {
@@ -35,7 +35,7 @@ namespace WebApplication1.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CustomerProfile customerProfile = await db.CustomerProfiles.Include(c => c.ApplicationUser).FirstOrDefaultAsync(c => c.CustomerId == id);
+            CustomerProfile customerProfile = await db.CustomerProfiles.FirstOrDefaultAsync(c => c.CustomerId == id);
             if (customerProfile == null)
             {
                 return HttpNotFound();
