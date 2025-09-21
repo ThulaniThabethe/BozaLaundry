@@ -1,0 +1,66 @@
+@model WebApplication1.Models.CustomerProfile
+
+@{
+    ViewBag.Title = "Customer Profile";
+}
+
+<h2>Customer Profile</h2>
+
+<div>
+    <div class="row">
+        <div class="col-md-12">
+            <h4>Your Profile</h4>
+            <hr />
+            <div class="row">
+                <div class="col-md-12">
+                    <dl class="dl-horizontal">
+                        <dt class="col-md-4">
+                            @Html.DisplayNameFor(model => model.FirstName)
+                        </dt>
+
+                        <dd class="col-md-8">
+                            @Html.DisplayFor(model => model.FirstName)
+                        </dd>
+
+                        <dt class="col-md-4">
+                            @Html.DisplayNameFor(model => model.LastName)
+                        </dt>
+
+                        <dd class="col-md-8">
+                            @Html.DisplayFor(model => model.LastName)
+                        </dd>
+
+                        <dt class="col-md-4">
+                            @Html.DisplayNameFor(model => model.Address)
+                        </dt>
+
+                        <dd class="col-md-8">
+                            @Html.DisplayFor(model => model.Address)
+                        </dd>
+
+                        <dt class="col-md-4">
+                            @Html.DisplayNameFor(model => model.PhoneNumber)
+                        </dt>
+
+                        <dd class="col-md-8">
+                            @Html.DisplayFor(model => model.PhoneNumber)
+                        </dd>
+
+                        <dt class="col-md-4">
+                            @Html.DisplayNameFor(model => model.PreferredContactMethod)
+                        </dt>
+
+                        <dd class="col-md-8">
+                            @Html.DisplayFor(model => model.PreferredContactMethod)
+                        </dd>
+
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

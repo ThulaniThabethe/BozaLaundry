@@ -1,33 +1,208 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+@{
+    ViewBag.Title = "BozaLaundry - Complete Laundry Management System";
 }
 
-<main>
-    <section class="row" aria-labelledby="aspnetTitle">
-        <h1 id="title">ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
-    </section>
+<!-- Modern Hero Section -->
+<div class="hero-section">
+    <div class="container">
+        <div class="row align-items-center min-vh-100">
+            <div class="col-lg-6 hero-content">
+                <h1 class="hero-title">Welcome to BozaLaundry</h1>
+                <p class="hero-subtitle">Complete Laundry Management System - Streamline your laundry business operations</p>
+                <div class="hero-buttons">
+                    @if (!Request.IsAuthenticated)
+                    {
+                        <a class="btn btn-light btn-lg btn-modern me-3" href="@Url.Action("Register", "Account")">
+                            <i class="fas fa-rocket me-2"></i>Get Started
+                        </a>
+                        <a class="btn btn-outline-light btn-lg btn-modern" href="@Url.Action("Login", "Account")">
+                            <i class="fas fa-sign-in-alt me-2"></i>Sign In
+                        </a>
+                    }
+                    else
+                    {
+                        <a class="btn btn-light btn-lg btn-modern" href="@Url.Action("Services", "Home")">
+                            <i class="fas fa-concierge-bell me-2"></i>View Services
+                        </a>
+                    }
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="text-center">
+                    <svg width="400" height="300" viewBox="0 0 400 300" class="img-fluid">
+                        <defs>
+                            <linearGradient id="laundryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#0d6efd;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#0056b3;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <!-- Washing Machine -->
+                        <rect x="50" y="100" width="120" height="100" rx="15" fill="url(#laundryGradient)" opacity="0.8"/>
+                        <circle cx="110" cy="150" r="30" fill="white" opacity="0.9"/>
+                        <circle cx="110" cy="150" r="20" fill="none" stroke="#0d6efd" stroke-width="3"/>
+                        
+                        <!-- Shirt -->
+                        <path d="M200 80 L220 60 L240 80 L240 120 L200 120 Z" fill="white" opacity="0.9"/>
+                        <circle cx="220" cy="90" r="15" fill="none" stroke="#0d6efd" stroke-width="2"/>
+                        
+                        <!-- Folded Clothes -->
+                        <rect x="280" y="120" width="80" height="60" fill="white" opacity="0.8" rx="5"/>
+                        <rect x="285" y="125" width="70" height="10" fill="#e9ecef" rx="2"/>
+                        <rect x="285" y="140" width="70" height="10" fill="#e9ecef" rx="2"/>
+                        <rect x="285" y="155" width="70" height="10" fill="#e9ecef" rx="2"/>
+                        
+                        <!-- Bubbles -->
+                        <circle cx="150" cy="200" r="8" fill="white" opacity="0.6"/>
+                        <circle cx="170" cy="180" r="5" fill="white" opacity="0.7"/>
+                        <circle cx="320" cy="160" r="6" fill="white" opacity="0.5"/>
+                        <circle cx="340" cy="190" r="4" fill="white" opacity="0.8"/>
+                        
+                        <!-- Sparkles -->
+                        <g fill="white" opacity="0.9">
+                            <path d="M80 60 L85 70 L95 70 L87 77 L90 87 L80 80 L70 87 L73 77 L65 70 L75 70 Z"/>
+                            <path d="M350 100 L352 104 L356 104 L353 107 L354 111 L350 109 L346 111 L347 107 L344 104 L348 104 Z"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (Request.IsAuthenticated)
+{
+    if (ViewBag.ErrorMessage != null)
+    {
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <i class="fas fa-exclamation-triangle me-2"></i>@ViewBag.ErrorMessage
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+    
+    if (ViewBag.DashboardData != null)
+    {
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card text-center bg-info text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Total Customers</h5>
+                    <h2 class="display-4">@(ViewBag.DashboardData?.TotalCustomers ?? 0)</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-center bg-success text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Total Orders</h5>
+                    <h2 class="display-4">@(ViewBag.DashboardData?.TotalOrders ?? 0)</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-center bg-warning text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Pending Orders</h5>
+                    <h2 class="display-4">@(ViewBag.DashboardData?.PendingOrders ?? 0)</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-center bg-secondary text-white">
+                <div class="card-body">
+                    <h5 class="card-title">Services Offered</h5>
+                    <h2 class="display-4">@(ViewBag.DashboardData?.TotalServices ?? 0)</h2>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="row">
-        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-            <h2 id="gettingStartedTitle">Getting started</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="librariesTitle">
-            <h2 id="librariesTitle">Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </section>
-        <section class="col-md-4" aria-labelledby="hostingTitle">
-            <h2 id="hostingTitle">Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        </section>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Recent Orders</h5>
+                </div>
+                <div class="card-body">
+                    @if (ViewBag.DashboardData?.RecentOrders?.Count > 0)
+                    {
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var order in ViewBag.DashboardData.RecentOrders)
+                                {
+                                    <tr>
+                                        <td>@order.OrderId</td>
+                                        <td>@(order.Customer?.Name ?? "Unknown Customer")</td>
+                                        <td>
+                                            <span class="badge bg-@(order.Status == "Pending" ? "warning" : order.Status == "Completed" ? "success" : "info")">
+                                                @order.Status
+                                            </span>
+                                        </td>
+                                        <td>@order.OrderDate.ToString("MM/dd/yyyy")</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    }
+                    else
+                    {
+                        <p class="text-muted">No recent orders found.</p>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Quick Actions</h5>
+                </div>
+                <div class="card-body">
+                    <div class="d-grid gap-2">
+                        <a href="@Url.Action("Create", "Customers")" class="btn btn-primary">Add New Customer</a>
+                        <a href="@Url.Action("Create", "LaundryOrders")" class="btn btn-success">Create New Order</a>
+                        <a href="@Url.Action("Index", "Inventory")" class="btn btn-info">View Inventory</a>
+                        <a href="@Url.Action("Index", "Reporting")" class="btn btn-warning">View Reports</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</main>
+    }
+}
+
+<div class="row mt-5">
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Customer Management</h5>
+                <p class="card-text">Manage your customer database, track customer information, and view order history.</p>
+                <a href="@Url.Action("Index", "Customers")" class="btn btn-primary">Manage Customers</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Order Processing</h5>
+                <p class="card-text">Create and manage laundry orders, track order status, and process payments.</p>
+                <a href="@Url.Action("Index", "LaundryOrders")" class="btn btn-success">Manage Orders</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h5 class="card-title">Inventory & Services</h5>
+                <p class="card-text">Manage your inventory, services, and pricing for different laundry services.</p>
+                <a href="@Url.Action("Index", "Services")" class="btn btn-info">View Services</a>
+            </div>
+        </div>
+    </div>
+</div>

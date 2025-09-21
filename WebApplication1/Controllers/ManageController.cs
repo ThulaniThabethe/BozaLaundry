@@ -1,4 +1,5 @@
 using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -56,9 +57,11 @@ namespace WebApplication1.Controllers
                 : message == ManageMessageId.Error ? "An error has occurred."
                 : message == ManageMessageId.AddPhoneSuccess ? "Your phone number was added."
                 : message == ManageMessageId.RemovePhoneSuccess ? "Your phone number was removed."
+                : message == ManageMessageId.UpdateProfileSuccess ? "Your profile has been updated successfully."
                 : "";
 
             var userId = User.Identity.GetUserId();
+            var user = await UserManager.FindByIdAsync(userId);
             var model = new IndexViewModel
             {
                 HasPassword = HasPassword(),
@@ -67,6 +70,8 @@ namespace WebApplication1.Controllers
                 Logins = await UserManager.GetLoginsAsync(userId),
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
             };
+            
+            ViewBag.UserProfile = user;
             return View(model);
         }
 
@@ -271,6 +276,62 @@ namespace WebApplication1.Controllers
             return View(model);
         }
 
+        //
+        // GET: /Manage/UpdateProfile
+        public async Task<ActionResult> UpdateProfile()
+        {
+            var userId = User.Identity.GetUserId();
+            var user = await UserManager.FindByIdAsync(userId);
+            
+            var model = new UpdateProfileViewModel
+            {
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email,
+                PhoneNumber = user.PhoneNumber,
+                Address = user.Address,
+                City = user.City,
+                State = user.State,
+                ZipCode = user.ZipCode
+            };
+            
+            return View(model);
+        }
+
+        //
+        // POST: /Manage/UpdateProfile
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> UpdateProfile(UpdateProfileViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var userId = User.Identity.GetUserId();
+            var user = await UserManager.FindByIdAsync(userId);
+            
+            user.FirstName = model.FirstName;
+            user.LastName = model.LastName;
+            user.Email = model.Email;
+            user.PhoneNumber = model.PhoneNumber;
+            user.Address = model.Address;
+            user.City = model.City;
+            user.State = model.State;
+            user.ZipCode = model.ZipCode;
+            
+            var result = await UserManager.UpdateAsync(user);
+            
+            if (result.Succeeded)
+            {
+                return RedirectToAction("Index", new { Message = ManageMessageId.UpdateProfileSuccess });
+            }
+            
+            AddErrors(result);
+            return View(model);
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && _userManager != null)
@@ -312,6 +373,7 @@ namespace WebApplication1.Controllers
             SetPasswordSuccess,
             RemoveLoginSuccess,
             RemovePhoneSuccess,
+            UpdateProfileSuccess,
             Error
         }
 

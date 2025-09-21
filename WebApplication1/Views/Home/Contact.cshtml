@@ -1,19 +1,111 @@
-﻿@{
-    ViewBag.Title = "Contact";
+@{
+    ViewBag.Title = "Contact BozaLaundry";
 }
-<main aria-labelledby="title">
-    <h2 id="title">@ViewBag.Title.</h2>
+
+<!-- Modern Hero Section -->
+<div class="hero-section">
+    <div class="container">
+        <div class="row align-items-center min-vh-50">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="hero-title">@ViewBag.Title</h1>
+                <p class="hero-subtitle">@ViewBag.Message</p>
+                <div class="mt-4">
+                    <svg width="300" height="200" viewBox="0 0 300 200" class="img-fluid">
+                        <defs>
+                            <linearGradient id="contactGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:white;stop-opacity:0.9" />
+                                <stop offset="100%" style="stop-color:white;stop-opacity:0.6" />
+                            </linearGradient>
+                        </defs>
+                        <!-- Envelope -->
+                        <rect x="50" y="70" width="80" height="60" fill="url(#contactGradient)" rx="5"/>
+                        <path d="M50 70 L90 95 L130 70" stroke="var(--primary-color)" stroke-width="2" fill="none"/>
+                        <path d="M50 130 L90 105 L130 130" stroke="var(--primary-color)" stroke-width="2" fill="none"/>
+                        <line x1="90" y1="95" x2="90" y2="105" stroke="var(--primary-color)" stroke-width="2"/>
+                        
+                        <!-- Phone -->
+                        <rect x="180" y="80" width="40" height="60" fill="url(#contactGradient)" rx="8"/>
+                        <rect x="185" y="85" width="30" height="8" fill="var(--primary-color)" rx="2"/>
+                        <rect x="185" y="100" width="30" height="20" fill="none" stroke="var(--primary-color)" stroke-width="2" rx="3"/>
+                        <circle cx="200" cy="135" r="3" fill="var(--primary-color)"/>
+                        
+                        <!-- Chat Bubbles -->
+                        <circle cx="250" cy="60" r="15" fill="url(#contactGradient)"/>
+                        <circle cx="270" cy="80" r="12" fill="url(#contactGradient)"/>
+                        <circle cx="240" cy="90" r="10" fill="url(#contactGradient)"/>
+                        
+                        <!-- Sparkles -->
+                        <g fill="white" opacity="0.8">
+                            <path d="M30 50 L33 55 L38 55 L34 58 L35 63 L30 60 L25 63 L26 58 L22 55 L27 55 Z"/>
+                            <path d="M260 140 L262 143 L265 143 L263 145 L264 148 L260 146 L256 148 L257 145 L255 143 L258 143 Z"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<main aria-labelledby="title" class="container mt-5">
+    <h2 id="title">@ViewBag.Title</h2>
     <h3>@ViewBag.Message</h3>
 
-    <address>
-        One Microsoft Way<br />
-        Redmond, WA 98052-6399<br />
-        <abbr title="Phone">P:</abbr>
-        425.555.0100
-    </address>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card card-modern">
+                <div class="card-header">
+                    <h4><i class="fas fa-map-marker-alt me-2"></i>Our Location</h4>
+                </div>
+                <div class="card-body">
+                    <address class="mb-0">
+                        <strong>BozaLaundry</strong><br />
+                        123 Laundry Street<br />
+                        Johannesburg, South Africa 2000<br />
+                        <abbr title="Phone"><i class="fas fa-phone me-1"></i></abbr>
+                        +27 (11) 123-4567
+                    </address>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card card-modern">
+                <div class="card-header">
+                    <h4><i class="fas fa-envelope me-2"></i>Contact Information</h4>
+                </div>
+                <div class="card-body">
+                    <address class="mb-0">
+                        <strong><i class="fas fa-headset me-1"></i>Customer Support:</strong><br />
+                        <a href="mailto:support@bozalaundry.co.za" class="text-decoration-none">support@bozalaundry.co.za</a><br /><br />
+                        <strong><i class="fas fa-bullhorn me-1"></i>Business Inquiries:</strong><br />
+                        <a href="mailto:info@bozalaundry.co.za" class="text-decoration-none">info@bozalaundry.co.za</a><br /><br />
+                        <strong><i class="fas fa-clock me-1"></i>Business Hours:</strong><br />
+                        Monday - Friday: 7:00 AM - 7:00 PM<br />
+                        Saturday: 8:00 AM - 5:00 PM<br />
+                        Sunday: 9:00 AM - 3:00 PM
+                    </address>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <address>
-        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-    </address>
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card card-modern">
+                <div class="card-header">
+                    <h4><i class="fas fa-comment-dots me-2"></i>Get in Touch</h4>
+                </div>
+                <div class="card-body text-center">
+                    <p class="lead">We'd love to hear from you! Whether you have questions about our services or need assistance with an order, our team is here to help.</p>
+                    <div class="mt-4">
+                        <a href="tel:+27111234567" class="btn btn-primary-modern btn-lg me-3">
+                            <i class="fas fa-phone me-2"></i>Call Us Now
+                        </a>
+                        <a href="mailto:support@bozalaundry.co.za" class="btn btn-outline-primary btn-lg">
+                            <i class="fas fa-envelope me-2"></i>Send Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>

@@ -4,60 +4,312 @@
     ViewBag.Title = "Customers";
 }
 
-<h2>Customers</h2>
+<!-- Modern Page Header -->
+<div class="page-header-modern">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h1 class="page-title">
+                    <i class="fas fa-users me-2" aria-hidden="true"></i>Customers
+                </h1>
+                <p class="page-subtitle">Manage your customer database</p>
+            </div>
+            <div class="col-md-6 text-end">
+                <a href="@Url.Action("Create", "Customers")" class="btn btn-primary-modern" aria-label="Add new customer">
+                    <i class="fas fa-user-plus me-2" aria-hidden="true"></i>Add New Customer
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Address)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RegistrationDate)
-        </th>
-        <th></th>
-    </tr>
+<div class="container mt-4">
+    <!-- Search and Filter Section -->
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-search" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" id="customerSearch" placeholder="Search customers..." 
+                       aria-label="Search customers by name, email, or phone number">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <select class="form-select" id="statusFilter" aria-label="Filter customers by status">
+                <option value="">All Status</option>
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+            </select>
+        </div>
+        <div class="col-md-3 text-end">
+            <button class="btn btn-outline-secondary" onclick="exportCustomers()" aria-label="Export customer data">
+                <i class="fas fa-download me-2" aria-hidden="true"></i>Export
+            </button>
+        </div>
+    </div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.FirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PhoneNumber)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RegistrationDate)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CustomerId })
-            @Html.ActionLink("Details", "Details", new { id=item.CustomerId })
-            @Html.ActionLink("Delete", "Delete", new { id=item.CustomerId })
-        </td>
-    </tr>
+    <!-- Modern Table -->
+    <div class="table-responsive">
+        <div id="loadingSpinner" class="text-center py-5 d-none">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading customers...</span>
+            </div>
+            <p class="text-muted mt-3">Loading customers...</p>
+        </div>
+        <table class="table table-modern" id="customersTable">
+            <thead>
+                <tr>
+                    <th scope="col">
+                        <input type="checkbox" id="selectAll" class="form-check-input" aria-label="Select all customers">
+                    </th>
+                    <th scope="col">
+                        @Html.DisplayNameFor(model => model.FirstName)
+                    </th>
+                    <th scope="col">
+                        @Html.DisplayNameFor(model => model.LastName)
+                    </th>
+                    <th scope="col">
+                        @Html.DisplayNameFor(model => model.Address)
+                    </th>
+                    <th scope="col">
+                        @Html.DisplayNameFor(model => model.PhoneNumber)
+                    </th>
+                    <th scope="col">
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <th scope="col">
+                        @Html.DisplayNameFor(model => model.RegistrationDate)
+                    </th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model) {
+                    <tr>
+                        <td>
+                        <input type="checkbox" class="form-check-input customer-checkbox" value="@item.CustomerId" 
+                               aria-label="Select customer @item.FirstName @item.LastName">
+                    </td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <div class="customer-avatar me-3">
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="16" cy="16" r="16" fill="#e3f2fd"/>
+                                        <path d="M16 18c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" fill="#1976d2"/>
+                                        <path d="M20 24c0-2.21-1.79-4-4-4s-4 1.79-4 4v1h8v-1z" fill="#1976d2"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="fw-semibold">@Html.DisplayFor(modelItem => item.FirstName)</div>
+                                    <small class="text-muted">Customer</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastName)
+                        </td>
+                        <td>
+                            <a href="tel:@item.PhoneNumber" class="text-decoration-none d-flex align-items-center">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2">
+                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="currentColor"/>
+                                </svg>
+                                @Html.DisplayFor(modelItem => item.PhoneNumber)
+                            </a>
+                        </td>
+                        <td>
+                            <span class="badge bg-secondary d-flex align-items-center justify-content-center">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-1">
+                                    <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z" fill="currentColor"/>
+                                </svg>
+                                @item.RegistrationDate.ToString("MMM dd, yyyy")
+                            </span>
+                        </td>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <div class="customer-avatar me-3">
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="16" cy="16" r="16" fill="#e3f2fd"/>
+                                        <path d="M16 18c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4z" fill="#1976d2"/>
+                                        <path d="M20 24c0-2.21-1.79-4-4-4s-4 1.79-4 4v1h8v-1z" fill="#1976d2"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="fw-semibold">@Html.DisplayFor(modelItem => item.LastName)</div>
+                                    <small class="text-muted">@Html.DisplayFor(modelItem => item.FirstName)</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <a href="mailto:@item.Email" class="text-decoration-none d-flex align-items-center">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="me-2">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
+                                </svg>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </a>
+                        </td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Customer actions for @item.FirstName @item.LastName">
+                                <a href="@Url.Action("Edit", "Customers", new { id = item.CustomerId })" 
+                                   class="btn btn-sm btn-outline-primary" title="Edit customer @item.FirstName @item.LastName" 
+                                   aria-label="Edit customer @item.FirstName @item.LastName">
+                                    <i class="fas fa-edit" aria-hidden="true"></i>
+                                </a>
+                                <a href="@Url.Action("Details", "Customers", new { id = item.CustomerId })" 
+                                   class="btn btn-sm btn-outline-info" title="View details for @item.FirstName @item.LastName" 
+                                   aria-label="View details for @item.FirstName @item.LastName">
+                                    <i class="fas fa-eye" aria-hidden="true"></i>
+                                </a>
+                                <button type="button" class="btn btn-sm btn-outline-danger" 
+                                        onclick="deleteCustomer(@item.CustomerId, '@item.FirstName @item.LastName')" 
+                                        title="Delete customer @item.FirstName @item.LastName" 
+                                        aria-label="Delete customer @item.FirstName @item.LastName">
+                                    <i class="fas fa-trash" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Empty State -->
+    @if (Model == null || !Model.Any())
+    {
+        <div class="text-center py-5 fade-in">
+            <div class="mb-4">
+                <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto text-muted empty-state-icon">
+                    <circle cx="60" cy="60" r="60" fill="#f8f9fa"/>
+                    <circle cx="60" cy="45" r="15" fill="#dee2e6"/>
+                    <path d="M60 65c8.28 0 15 6.72 15 15v10H45V80c0-8.28 6.72-15 15-15z" fill="#dee2e6"/>
+                    <circle cx="35" cy="35" r="8" fill="#e9ecef"/>
+                    <circle cx="85" cy="35" r="8" fill="#e9ecef"/>
+                </svg>
+            </div>
+            <h4 class="text-muted mb-2">No customers found</h4>
+            <p class="text-muted mb-4">Get started by adding your first customer to the system.</p>
+            <a href="@Url.Action("Create", "Customers")" class="btn btn-primary">
+                <i class="fas fa-plus me-2"></i>Add Your First Customer
+            </a>
+        </div>
+    }
+    else
+    {
+        <!-- Bulk Actions -->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="btn-group" role="group" aria-label="Bulk customer actions">
+                    <button type="button" class="btn btn-outline-secondary" onclick="bulkDelete()" 
+                            aria-label="Delete selected customers">
+                        <i class="fas fa-trash me-2" aria-hidden="true"></i>Delete Selected
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary" onclick="bulkExport()" 
+                            aria-label="Export selected customers">
+                        <i class="fas fa-file-export me-2" aria-hidden="true"></i>Export Selected
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-6 text-end">
+                <small class="text-muted" aria-live="polite">
+                    Showing @Model.Count() customers
+                </small>
+            </div>
+        </div>
+    }
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title" id="deleteModalLabel">
+                    <i class="fas fa-exclamation-triangle me-2" aria-hidden="true"></i>Confirm Delete
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close this dialog"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete <strong id="customerName"></strong>?</p>
+                <p class="text-muted">This action cannot be undone.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" id="confirmDelete">Delete Customer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Show loading state
+        function showLoading() {
+            document.getElementById('loadingSpinner').classList.remove('d-none');
+            document.getElementById('customersTable').style.opacity = '0.5';
+        }
+
+        // Hide loading state
+        function hideLoading() {
+            document.getElementById('loadingSpinner').classList.add('d-none');
+            document.getElementById('customersTable').style.opacity = '1';
+        }
+
+        // Customer search functionality with loading state
+        document.getElementById('customerSearch').addEventListener('keyup', function() {
+            showLoading();
+            
+            // Simulate loading delay for better UX
+            setTimeout(() => {
+                const searchTerm = this.value.toLowerCase();
+                const rows = document.querySelectorAll('#customersTable tbody tr');
+                
+                rows.forEach(row => {
+                    const text = row.textContent.toLowerCase();
+                    row.style.display = text.includes(searchTerm) ? '' : 'none';
+                });
+                
+                hideLoading();
+            }, 300);
+        });
+
+        // Select all functionality
+        document.getElementById('selectAll').addEventListener('change', function() {
+            const checkboxes = document.querySelectorAll('.customer-checkbox');
+            checkboxes.forEach(checkbox => checkbox.checked = this.checked);
+        });
+
+        // Delete customer function
+        function deleteCustomer(id, name) {
+            document.getElementById('customerName').textContent = name;
+            const modal = new bootstrap.Modal(document.getElementById('deleteModal'));
+            modal.show();
+            
+            document.getElementById('confirmDelete').onclick = function() {
+                // Here you would typically make an AJAX call to delete the customer
+                window.location.href = '@Url.Action("Delete", "Customers")/' + id;
+            };
+        }
+
+        // Export functions
+        function exportCustomers() {
+            alert('Export functionality would be implemented here');
+        }
+
+        function bulkDelete() {
+            const selected = document.querySelectorAll('.customer-checkbox:checked');
+            if (selected.length === 0) {
+                alert('Please select customers to delete');
+                return;
+            }
+            alert('Bulk delete functionality would be implemented here');
+        }
+
+        function bulkExport() {
+            const selected = document.querySelectorAll('.customer-checkbox:checked');
+            if (selected.length === 0) {
+                alert('Please select customers to export');
+                return;
+            }
+            alert('Bulk export functionality would be implemented here');
+        }
+    </script>
 }
-
-</table>

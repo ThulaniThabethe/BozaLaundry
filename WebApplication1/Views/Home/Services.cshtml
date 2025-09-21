@@ -1,0 +1,92 @@
+@model IEnumerable<WebApplication1.Models.Service>
+
+@{
+    ViewBag.Title = "Our Services - BozaLaundry";
+}
+
+<div class="jumbotron bg-info text-white text-center py-4 mb-4">
+    <div class="container">
+        <h1 class="display-5">Our Laundry Services</h1>
+        <p class="lead">Professional laundry services tailored to your needs</p>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Available Services</h5>
+            </div>
+            <div class="card-body">
+                @if (Model != null && Model.Any())
+                {
+                    <div class="row">
+                        @foreach (var service in Model)
+                        {
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">@service.Name</h5>
+                                        <p class="card-text">@service.Description</p>
+                                        <p class="card-text">
+                                            <strong>Price Per Kg:</strong> $@service.PricePerKg<br>
+                                            <strong>Minimum Weight:</strong> @service.MinimumWeightKg Kg
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <p class="text-muted">No services available at the moment.</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-tshirt fa-3x text-primary mb-3"></i>
+                <h5 class="card-title">Wash & Fold</h5>
+                <p class="card-text">Professional washing and folding services for your everyday laundry needs.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-iron fa-3x text-success mb-3"></i>
+                <h5 class="card-title">Dry Cleaning</h5>
+                <p class="card-text">Expert dry cleaning services for delicate fabrics and special garments.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="fas fa-clock fa-3x text-warning mb-3"></i>
+                <h5 class="card-title">Express Service</h5>
+                <p class="card-text">Fast-track your laundry with our express service option.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-12 text-center">
+        <p class="lead">Ready to place an order?</p>
+        @if (Request.IsAuthenticated)
+        {
+            <a href="@Url.Action("Create", "LaundryOrders")" class="btn btn-primary btn-lg">Create New Order</a>
+        }
+        else
+        {
+            <a href="@Url.Action("Login", "Account")" class="btn btn-primary btn-lg">Sign In to Order</a>
+        }
+    </div>
+</div>

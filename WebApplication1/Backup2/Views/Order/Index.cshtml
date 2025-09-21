@@ -1,0 +1,71 @@
+@model IEnumerable<WebApplication1.Models.Order>
+
+@{
+    ViewBag.Title = "My Orders";
+}
+
+<h2>My Orders</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="table-responsive">
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ServiceType.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderStatus.StatusName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PickupDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeliveryDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServiceType.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderStatus.StatusName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Weight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PickupDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DeliveryDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OrderId })
+            @Html.ActionLink("Details", "Details", new { id=item.OrderId })
+            @Html.ActionLink("Delete", "Delete", new { id=item.OrderId })
+        </td>
+    </tr>
+}
+
+</table>
+</div>

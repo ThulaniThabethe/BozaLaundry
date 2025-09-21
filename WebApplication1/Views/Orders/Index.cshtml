@@ -4,25 +4,252 @@
     ViewBag.Title = "Orders";
 }
 
-<div class="jumbotron">
-    <h1>Manage Orders</h1>
-    <p class="lead">Efficiently manage all customer orders, from creation to completion.</p>
+<!-- Modern Page Header -->
+<div class="page-header-modern">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h1 class="page-title">
+                    <i class="fas fa-shopping-cart me-2"></i>Orders
+                </h1>
+                <p class="page-subtitle">Efficiently manage all customer orders, from creation to completion</p>
+            </div>
+            <div class="col-md-6 text-end">
+                <a href="@Url.Action("Create", "Orders")" class="btn btn-primary-modern">
+                    <i class="fas fa-plus-circle me-2"></i>Create New Order
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>View All Orders</h2>
-        <p>Access a comprehensive list of all orders, track their status, and review details.</p>
-        <p>@Html.ActionLink("View Orders ", "OrderList", "Orders", null, new { @class = "btn btn-primary" })</p>
+<div class="container mt-4">
+    <!-- Order Stats Cards -->
+    <div class="row mb-4">
+        @if (Model == null || !Model.Any())
+        {
+            <div class="col-12">
+                <div class="text-center py-5 fade-in">
+                    <div class="mb-4">
+                        <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto text-muted empty-state-icon">
+                            <circle cx="60" cy="60" r="60" fill="#f8f9fa"/>
+                            <rect x="30" y="35" width="60" height="50" rx="5" fill="#dee2e6"/>
+                            <circle cx="45" cy="50" r="3" fill="#adb5bd"/>
+                            <rect x="50" y="47" width="30" height="6" rx="3" fill="#adb5bd"/>
+                            <rect x="35" y="65" width="50" height="4" rx="2" fill="#adb5bd"/>
+                            <rect x="35" y="72" width="35" height="4" rx="2" fill="#adb5bd"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-muted mb-2">No orders yet</h4>
+                    <p class="text-muted mb-4">Start creating orders to see them here.</p>
+                    <a href="@Url.Action("Create", "Orders")" class="btn btn-primary">
+                        <i class="fas fa-plus me-2"></i>Create Your First Order
+                    </a>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="col-md-3">
+                <div class="card card-modern text-center">
+                    <div class="card-body">
+                        <div class="stat-icon mb-2">
+                            <i class="fas fa-clipboard-list text-primary" style="font-size: 2rem;"></i>
+                        </div>
+                        <h3 class="stat-number">@Model.Count()</h3>
+                        <p class="stat-label text-muted">Total Orders</p>
+                    </div>
+                </div>
+            </div>
+        <div class="col-md-3">
+            <div class="card card-modern text-center">
+                <div class="card-body">
+                    <div class="stat-icon mb-2">
+                        <i class="fas fa-clock text-warning" style="font-size: 2rem;"></i>
+                    </div>
+                    <h3 class="stat-number">@Model.Count(o => o.OrderStatus == "Pending")</h3>
+                    <p class="stat-label text-muted">Pending Orders</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card card-modern text-center">
+                <div class="card-body">
+                    <div class="stat-icon mb-2">
+                        <i class="fas fa-cogs text-info" style="font-size: 2rem;"></i>
+                    </div>
+                    <h3 class="stat-number">@Model.Count(o => o.OrderStatus == "Processing")</h3>
+                    <p class="stat-label text-muted">Processing Orders</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card card-modern text-center">
+                <div class="card-body">
+                    <div class="stat-icon mb-2">
+                        <i class="fas fa-check-circle text-success" style="font-size: 2rem;"></i>
+                    </div>
+                    <h3 class="stat-number">@Model.Count(o => o.OrderStatus == "Completed")</h3>
+                    <p class="stat-label text-muted">Completed Orders</p>
+                </div>
+            </div>
+        </div>
+        }
     </div>
-    <div class="col-md-4">
-        <h2>Create New Order</h2>
-        <p>Place new orders for customers, specifying services, quantities, and delivery preferences.</p>
-        <p>@Html.ActionLink("Create New ", "Create", "Orders", null, new { @class = "btn btn-primary" })</p>
+
+    <!-- Quick Actions -->
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card card-modern h-100">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="fas fa-list me-2"></i>View All Orders
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <p class="text-muted">Access a comprehensive list of all orders, track their status, and review details.</p>
+                    <a href="@Url.Action("OrderList", "Orders")" class="btn btn-outline-primary w-100">
+                        <i class="fas fa-arrow-right me-2"></i>View Orders
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-modern h-100">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="fas fa-plus-circle me-2"></i>Create New Order
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <p class="text-muted">Place new orders for customers, specifying services, quantities, and delivery preferences.</p>
+                    <a href="@Url.Action("Create", "Orders")" class="btn btn-outline-success w-100">
+                        <i class="fas fa-plus me-2"></i>Create Order
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-modern h-100">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="fas fa-cogs me-2"></i>Process Orders
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <p class="text-muted">Update order statuses, assign tasks, and ensure timely processing and delivery.</p>
+                    <a href="@Url.Action("OrderList", "Orders")" class="btn btn-outline-info w-100">
+                        <i class="fas fa-tasks me-2"></i>Process Orders
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Process Orders</h2>
-        <p>Update order statuses, assign tasks, and ensure timely processing and delivery.</p>
-        <p>@Html.ActionLink("Process ", "OrderList", "Orders", null, new { @class = "btn btn-primary" })</p>
+
+    <!-- Recent Orders Preview -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card card-modern">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="fas fa-history me-2"></i>Recent Orders
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div id="ordersLoading" class="text-center py-5 d-none">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading orders...</span>
+                        </div>
+                        <p class="text-muted mt-3">Loading orders...</p>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-modern" id="ordersTable">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Service</th>
+                                    <th>Status</th>
+                                    <th>Total</th>
+                                    <th>Order Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var order in Model.Take(5))
+                                {
+                                    <tr>
+                                        <td><strong>#@order.OrderId</strong></td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="customer-avatar me-2">
+                                                    <i class="fas fa-user-circle text-primary"></i>
+                                                </div>
+                                                <span>Customer #@order.CustomerId</span>
+                                            </div>
+                                        </td>
+                                        <td>@order.ServiceType</td>
+                                        <td>
+                                            @{
+                                                var statusClass = order.OrderStatus switch
+                                                {
+                                                    "Pending" => "warning",
+                                                    "Processing" => "info",
+                                                    "Completed" => "success",
+                                                    "Cancelled" => "danger",
+                                                    _ => "secondary"
+                                                };
+                                            }
+                                            <span class="badge bg-@statusClass">@order.OrderStatus</span>
+                                        </td>
+                                        <td><strong>R @order.TotalAmount</strong></td>
+                                        <td>@order.OrderDate.ToString("yyyy-MM-dd")</td>
+                                        <td>
+                                            <div class="btn-group" role="group">
+                                                <a href="@Url.Action("Details", "Orders", new { id = order.OrderId })" 
+                                                   class="btn btn-sm btn-outline-info" title="View Details">
+                                                    <i class="fas fa-eye"></i>
+                                                </a>
+                                                <a href="@Url.Action("Edit", "Orders", new { id = order.OrderId })" 
+                                                   class="btn btn-sm btn-outline-primary" title="Edit Order">
+                                                    <i class="fas fa-edit"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a href="@Url.Action("OrderList", "Orders")" class="btn btn-outline-secondary">
+                            <i class="fas fa-arrow-right me-2"></i>View All Orders
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        // Show loading state for orders
+        function showOrdersLoading() {
+            document.getElementById('ordersLoading').classList.remove('d-none');
+            document.querySelector('#ordersTable').style.opacity = '0.5';
+        }
+
+        // Hide loading state for orders
+        function hideOrdersLoading() {
+            document.getElementById('ordersLoading').classList.add('d-none');
+            document.querySelector('#ordersTable').style.opacity = '1';
+        }
+
+        // Simulate loading on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            showOrdersLoading();
+            setTimeout(hideOrdersLoading, 800);
+        });
+    </script>
+}

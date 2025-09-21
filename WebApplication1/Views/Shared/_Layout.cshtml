@@ -1,40 +1,304 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <meta name="description" content="BozaLaundry - Professional laundry services in South Africa. Fast, reliable, and affordable cleaning solutions.">
+    <meta name="keywords" content="laundry, dry cleaning, South Africa, Johannesburg, professional cleaning">
+    <meta name="author" content="BozaLaundry">
+    <title>@ViewBag.Title - BozaLaundry</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="@Url.Content("~/favicon.ico")">
+    <link rel="apple-touch-icon" sizes="180x180" href="@Url.Content("~/favicon.ico")">
+    <link rel="icon" type="image/png" sizes="32x32" href="@Url.Content("~/favicon.ico")">
+    <link rel="icon" type="image/png" sizes="16x16" href="@Url.Content("~/favicon.ico")">
+    
+    <!-- Browser Theme Color -->
+    <meta name="theme-color" content="#0d6efd">
+    
+    <!-- Mobile Web App Capable -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="BozaLaundry">
+    
+    <!-- MS Application -->
+    <meta name="msapplication-TileColor" content="#0d6efd">
+    <meta name="msapplication-TileImage" content="@Url.Content("~/favicon.ico")">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="@ViewBag.Title - BozaLaundry">
+    <meta property="og:description" content="Professional laundry services in South Africa">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="@Request.Url">
 </head>
-<body>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+<body class="d-flex flex-column min-vh-100">
+    <!-- Modern Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm sticky-top" role="navigation" aria-label="Main navigation">
         <div class="container">
-            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+            <!-- Brand Logo -->
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="@Url.Action("Index", "Home")" aria-label="BozaLaundry Home">
+                <div class="logo-container me-2">
+                    <img src="@Url.Content("~/favicon.ico")" alt="BozaLaundry Logo" class="logo-img" width="32" height="32" style="border-radius: 4px;">
+                </div>
+                <span class="text-light">BozaLaundry</span>
+            </a>
+            
+            <!-- Mobile Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" 
+                    aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+            
+            <!-- Navbar Content -->
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="@Url.Action("Index", "Home")" aria-label="Home page">
+                            <i class="fas fa-home me-1" aria-hidden="true"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="@Url.Action("Services", "Home")" aria-label="Services page">
+                            <i class="fas fa-concierge-bell me-1" aria-hidden="true"></i> Services
+                        </a>
+                    </li>
+                    
+                    @if (Request.IsAuthenticated)
+                    {
+                        <!-- Customers Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle px-3" href="#" id="customersDropdown" role="button" 
+                               data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+                                <i class="fas fa-users me-1" aria-hidden="true"></i> Customers
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="customersDropdown">
+                                <li><a class="dropdown-item" href="@Url.Action("Index", "Customers")" aria-label="View all customers">
+                                    <i class="fas fa-list me-2" aria-hidden="true"></i> All Customers
+                                </a></li>
+                                <li><a class="dropdown-item" href="@Url.Action("Create", "Customers")" aria-label="Add new customer">
+                                    <i class="fas fa-user-plus me-2" aria-hidden="true"></i> Add Customer
+                                </a></li>
+                            </ul>
+                        </li>
+                        
+                        <!-- Orders Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle px-3" href="#" id="ordersDropdown" role="button" 
+                               data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+                                <i class="fas fa-shopping-cart me-1" aria-hidden="true"></i> Orders
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="ordersDropdown">
+                                <li><a class="dropdown-item" href="@Url.Action("Index", "LaundryOrders")" aria-label="View all orders">
+                                    <i class="fas fa-list me-2" aria-hidden="true"></i> All Orders
+                                </a></li>
+                                <li><a class="dropdown-item" href="@Url.Action("Create", "LaundryOrders")" aria-label="Create new order">
+                                    <i class="fas fa-plus-circle me-2" aria-hidden="true"></i> Create Order
+                                </a></li>
+                            </ul>
+                        </li>
+                        
+                        <!-- Inventory Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle px-3" href="#" id="inventoryDropdown" role="button" 
+                               data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+                                <i class="fas fa-boxes me-1" aria-hidden="true"></i> Inventory
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="inventoryDropdown">
+                                <li><a class="dropdown-item" href="@Url.Action("Index", "Inventory")" aria-label="View all inventory items">
+                                    <i class="fas fa-list me-2" aria-hidden="true"></i> All Items
+                                </a></li>
+                                <li><a class="dropdown-item" href="@Url.Action("Create", "Inventory")" aria-label="Add new inventory item">
+                                    <i class="fas fa-plus-circle me-2" aria-hidden="true"></i> Add Item
+                                </a></li>
+                            </ul>
+                        </li>
+                        
+                        <!-- Reports Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle px-3" href="#" id="reportsDropdown" role="button" 
+                               data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+                                <i class="fas fa-chart-bar me-1" aria-hidden="true"></i> Reports
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="reportsDropdown">
+                                <li><a class="dropdown-item" href="@Url.Action("Index", "Reports")" aria-label="View dashboard">
+                                    <i class="fas fa-chart-line me-2" aria-hidden="true"></i> Dashboard
+                                </a></li>
+                                <li><a class="dropdown-item" href="@Url.Action("Reports", "Reports")" aria-label="View reports">
+                                    <i class="fas fa-file-alt me-2" aria-hidden="true"></i> Reports
+                                </a></li>
+                            </ul>
+                        </li>
+                    }
+                    
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="@Url.Action("About", "Home")">
+                            <i class="fas fa-info-circle me-1"></i> About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="@Url.Action("Contact", "Home")">
+                            <i class="fas fa-envelope me-1"></i> Contact
+                        </a>
+                    </li>
+                    
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle px-3" href="#" id="profileDropdown" role="button" 
+                               data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+                                <i class="fas fa-user-circle me-1" aria-hidden="true"></i> Profile
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+                                <li><a class="dropdown-item" href="@Url.Action("Index", "Manage")" aria-label="View account settings">
+                                    <i class="fas fa-user me-2" aria-hidden="true"></i> Account
+                                </a></li>
+                                <li><a class="dropdown-item" href="@Url.Action("UpdateProfile", "Manage")" aria-label="Update profile information">
+                                    <i class="fas fa-user-edit me-2" aria-hidden="true"></i> Update Profile
+                                </a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "d-inline" }))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()" aria-label="Sign out of your account">
+                                            <i class="fas fa-sign-out-alt me-2" aria-hidden="true"></i> Logout
+                                        </a>
+                                    }
+                                </li>
+                            </ul>
+                        </li>
+                    }
                 </ul>
-                @Html.Partial("_LoginPartial")
+                
+                <!-- Login partial -->
+                <div class="d-flex">
+                    @Html.Partial("_LoginPartial")
+                </div>
+                
+                <!-- Skip to main content link for accessibility -->
+                <a href="#mainContent" class="visually-hidden-focusable position-absolute top-0 start-0 bg-primary text-white p-2 m-2 rounded" 
+                   style="z-index: 9999;">Skip to main content</a>
             </div>
         </div>
     </nav>
-    <div class="container body-content">
+    <!-- Main Content -->
+    <main class="flex-grow-1" id="mainContent" aria-label="Main content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+    </main>
+    
+    <!-- Modern Footer -->
+    <footer class="bg-dark text-light py-5 mt-auto">
+        <div class="container">
+            <div class="row">
+                <!-- Company Info -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="@Url.Content("~/favicon.ico")" alt="BozaLaundry Logo" class="me-3" width="32" height="32" style="border-radius: 4px;">
+                        <h4 class="text-primary mb-0">BozaLaundry</h4>
+                    </div>
+                    <p class="text-light">Professional laundry services with modern technology and eco-friendly solutions.</p>
+                    <div class="d-flex gap-2" role="group" aria-label="Social media links">
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle" aria-label="Facebook">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle" aria-label="Twitter">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle" aria-label="Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="text-white fw-bold mb-3">Quick Links</h6>
+                    <ul class="list-unstyled" role="list">
+                        <li class="mb-2"><a href="@Url.Action("Index", "Home")" class="text-light text-decoration-none hover-primary" aria-label="Go to Home">Home</a></li>
+                        <li class="mb-2"><a href="@Url.Action("Services", "Home")" class="text-light text-decoration-none hover-primary" aria-label="View Services">Services</a></li>
+                        <li class="mb-2"><a href="@Url.Action("Index", "Customers")" class="text-light text-decoration-none hover-primary" aria-label="View Customers">Customers</a></li>
+                        <li class="mb-2"><a href="@Url.Action("Index", "Orders")" class="text-light text-decoration-none hover-primary" aria-label="View Orders">Orders</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5 class="text-primary mb-3">Services</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none hover-primary">Wash & Fold</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none hover-primary">Dry Cleaning</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none hover-primary">Ironing</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none hover-primary">Pickup & Delivery</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h6 class="text-white fw-bold mb-3">Contact Info</h6>
+                    <ul class="list-unstyled" role="list">
+                        <li class="mb-2">
+                            <i class="fas fa-map-marker-alt text-primary me-2" aria-hidden="true"></i>
+                            <span class="text-light">123 Bree Street, Johannesburg, Gauteng 2001</span>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-phone text-primary me-2" aria-hidden="true"></i>
+                            <a href="tel:+27111234567" class="text-light text-decoration-none" aria-label="Call us at +27 11 123 4567">+27 11 123 4567</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-envelope text-primary me-2" aria-hidden="true"></i>
+                            <a href="mailto:info@bozalaundry.co.za" class="text-light text-decoration-none" aria-label="Email us at info@bozalaundry.co.za">info@bozalaundry.co.za</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-clock text-primary me-2" aria-hidden="true"></i>
+                            <span class="text-light">Mon-Fri: 8AM-6PM, Sat: 9AM-4PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="my-4 border-secondary">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 text-light">&copy; 2024 BozaLaundry. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0 text-light">Made with <i class="fas fa-heart text-danger" aria-hidden="true"></i> in Johannesburg</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    
+    <script>
+        // Add hover effect to footer links
+        document.addEventListener('DOMContentLoaded', function() {
+            const footerLinks = document.querySelectorAll('footer a.text-light');
+            footerLinks.forEach(link => {
+                link.addEventListener('mouseenter', function() {
+                    this.style.color = '#0d6efd';
+                });
+                link.addEventListener('mouseleave', function() {
+                    this.style.color = '#f8f9fa';
+                });
+            });
+        });
+    </script>
 </body>
 </html>

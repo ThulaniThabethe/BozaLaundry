@@ -1,5 +1,6 @@
+extern alias SCD;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+using SCD::System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 
 namespace WebApplication1.Models
@@ -80,5 +81,37 @@ namespace WebApplication1.Models
     {
         public string SelectedProvider { get; set; }
         public ICollection<System.Web.Mvc.SelectListItem> Providers { get; set; }
+    }
+
+    public class UpdateProfileViewModel
+    {
+        [Required]
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
+
+        [Required]
+        [EmailAddress]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+
+        [Phone]
+        [Display(Name = "Phone Number")]
+        public string PhoneNumber { get; set; }
+
+        [Display(Name = "Address")]
+        public string Address { get; set; }
+
+        [Display(Name = "City")]
+        public string City { get; set; }
+
+        [Display(Name = "State")]
+        public string State { get; set; }
+
+        [Display(Name = "Zip Code")]
+        public string ZipCode { get; set; }
     }
 }

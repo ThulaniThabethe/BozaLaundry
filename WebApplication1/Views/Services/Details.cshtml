@@ -1,6 +1,6 @@
 @model WebApplication1.Models.Service
 
-@{
+@{ 
     ViewBag.Title = "Details";
 }
 
@@ -19,14 +19,6 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.Description)
         </dt>
 
@@ -34,9 +26,33 @@
             @Html.DisplayFor(model => model.Description)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.PricePerKg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PricePerKg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinimumWeightKg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinimumWeightKg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsAvailable)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsAvailable)
+        </dd>
+
     </dl>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id })
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Admin")
 </p>

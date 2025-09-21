@@ -1,0 +1,57 @@
+@model WebApplication1.Models.IndexViewModel
+@{
+    ViewBag.Title = "Manage Account";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+<p class="text-success">@ViewBag.StatusMessage</p>
+<div>
+    <h4>Change your account settings</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Password:</dt>
+        <dd>
+            [<a href="@Url.Action("ChangePassword", "Manage")">Change your password</a>]
+        </dd>
+        <dt>External Logins:</dt>
+        <dd>
+            @Model.Logins.Count [<a href="@Url.Action("ManageLogins")">Manage</a>]
+        </dd>
+        @*
+            <dt>Phone Number:</dt>
+            <dd>
+                @(Model.PhoneNumber ?? "None") [
+                @if (Model.PhoneNumber != null)
+                {
+                    @Html.ActionLink("Change", "AddPhoneNumber")
+                    @:&
+                    @Html.ActionLink("Remove", "RemovePhoneNumber")
+                }
+                else
+                {
+                    @Html.ActionLink("Add", "AddPhoneNumber")
+                }
+                ]
+            </dd>
+        *
+        <dt>Two-Factor Authentication:</dt>
+        <dd>
+            <p>
+                @(Model.TwoFactor ? "Enabled" : "Disabled")
+                @if (Model.TwoFactor)
+                {
+                    @:[
+                    @Html.ActionLink("Disable", "DisableTwoFactorAuthentication", null, new { @class = "btn btn-link" })
+                    @:]
+                }
+                else
+                {
+                    @:[
+                    @Html.ActionLink("Enable", "EnableTwoFactorAuthentication", null, new { @class = "btn btn-link" })
+                    @:]
+                }
+            </p>
+        </dd>
+    </dl>
+</div>

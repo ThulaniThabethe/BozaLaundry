@@ -1,8 +1,9 @@
+extern alias EF;
 using System;
 using System.Collections.Generic;
+using EF::System.Data.Entity;
 using System.Data.Entity;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Web;
 using WebApplication1.Models;
 
@@ -39,7 +40,7 @@ namespace WebApplication1.Repositories
 
         public void Update(TEntity entity)
         {
-            Context.Entry(entity).State = EntityState.Modified;
+            Context.Entry(entity).State = EF::System.Data.Entity.EntityState.Modified;
         }
 
         public void Remove(TEntity entity)

@@ -1,0 +1,47 @@
+@model IEnumerable<WebApplication1.Models.InventoryItem>
+
+@{
+    ViewBag.Title = "Inventory Items";
+}
+
+<h2>Inventory Items</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div class="table-responsive">
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ItemName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ItemName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.InventoryItemId })
+            @Html.ActionLink("Details", "Details", new { id=item.InventoryItemId })
+            @Html.ActionLink("Delete", "Delete", new { id=item.InventoryItemId })
+        </td>
+    </tr>
+}
+
+</table>
+</div>
